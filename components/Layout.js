@@ -1,15 +1,14 @@
 import React, { Fragment } from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import Header from './Header/Header'
+import Header from './Header'
 
 export const theme = {
+  rajah: '#F6BD60',
+  burntSienna: '#E9724C',
+  athensGray: '#E8E9EB',
+  hippieBlue: '#5C9EAD',
+  outerSpace: '#313638',
   primaryFont: 'sans-serif',
-  red: '#FF0000',
-  black: '#393939',
-  grey: '#3A3A3A',
-  lightgrey: '#E1E1E1',
-  offWhite: '#EDEDED',
-  maxWidth: '1000px',
   bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
 }
 
@@ -17,7 +16,12 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     font-family: ${props => props.theme.primaryFont};
+    color: ${props => props.theme.outerSpace};
     background-color: ${props => props.theme.lightgrey};
+  }
+
+  ul {
+    margin: 0;
   }
 `
 

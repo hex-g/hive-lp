@@ -1,35 +1,44 @@
 import React from 'react'
 import Link from 'next/link'
-import { HeaderWrapper, HeaderNav, HeaderList, HeaderItem } from './Header.style'
+import {
+  HeaderHolder,
+  LogoWrapper,
+  Nav,
+  NavList,
+  NavItem,
+  NavButtonWrapper,
+  NavButton,
+  Pipe
+} from './Header.style'
 
 const Header = () => {
   return (
-    <HeaderWrapper>
-      <HeaderNav>
-        <HeaderList>
-          <HeaderItem>
-            <Link href="/">
-              <a>Sessão 1</a>
+    <HeaderHolder>
+      <LogoWrapper />
+      <Nav>
+        <NavList>
+          <NavItem>
+            <Link href='/'>
+              <a>O que é Hive?</a>
             </Link>
-          </HeaderItem>
-          <HeaderItem>
-            <Link href="/">
-              <a>Sessão 2</a>
+          </NavItem>
+          <NavItem>
+            <Link href='/'>
+              <a>Ferramentas</a>
             </Link>
-          </HeaderItem>
-          <HeaderItem>
-            <Link href="/">
-              <a>Sessão 3</a>
-            </Link>
-          </HeaderItem>
-          <HeaderItem>
-            <Link href="/">
-              <a>Sessão 4</a>
-            </Link>
-          </HeaderItem>
-        </HeaderList>
-      </HeaderNav>
-    </HeaderWrapper>
+          </NavItem>
+        </NavList>
+      </Nav>
+      <NavButtonWrapper>
+        <Link href='/'>
+          <a>Entrar</a>
+        </Link>
+        <Pipe></Pipe>
+        <Link href='/'>
+          <a>Cadastre-se</a>
+        </Link>
+      </NavButtonWrapper>
+    </HeaderHolder>
   )
 }
 

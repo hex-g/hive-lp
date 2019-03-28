@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import FirstSection from '../components/FirstSection'
 
 const Index = () => {
   return (
     <Layout>
-      <h1>Home</h1>
-      <p>Texto de teste</p>
+      <FirstSection />
     </Layout>
   )
 }

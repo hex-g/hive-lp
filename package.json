@@ -1,7 +1,7 @@
 {
-  "name": "hex",
+  "name": "hive-lp",
   "version": "1.0.0",
-  "description": "Hex Landing Page",
+  "description": "Hive Landing Page",
   "main": "index.js",
   "scripts": {
     "dev": "next",
