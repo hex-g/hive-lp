@@ -9,7 +9,7 @@ export const Section = styled.section`
   background-color: #F5F5F5;
 `
 
-export const Title = styled.h1` 
+export const Title = styled.h2` 
   font-size: 40px;
   font-weight: 900;
 `
