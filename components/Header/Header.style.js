@@ -5,6 +5,7 @@ export const HeaderHolder = styled.header`
   grid-template-columns: 20% 50% 20%;
   padding: 20px;
   font-weight: lighter;
+  background-color: ${props => props.theme.athensGray};
 `
 
 export const LogoWrapper = styled.div`
