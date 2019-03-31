@@ -9,7 +9,7 @@ export const Section = styled.section`
   background-color: #F5F5F5;
 `
 
-export const Title = styled.h1` 
+export const H1 = styled.h1` 
   font-size: 40px;
   font-weight: 900;
 `
@@ -58,13 +58,13 @@ export const ImageThree = styled.div`
   background-size: cover;
 `
 
-export const TitleSquare = styled.h2`
+export const H2 = styled.h2`
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 50px;
 `
 
-export const Text = styled.p`
+export const P = styled.p`
   text-align: center;
   width: 70%;
   font-size: 20px;
