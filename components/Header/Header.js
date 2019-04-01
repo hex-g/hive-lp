@@ -10,11 +10,18 @@ import {
   NavButton,
   Pipe
 } from './Header.style'
+import SvgMapping from '../SvgMapping'
 
 const Header = () => {
   return (
     <HeaderHolder>
-      <LogoWrapper />
+      <LogoWrapper>
+        <Link href='/'>
+          <a>
+            <SvgMapping name="logo" />
+          </a>
+        </Link>
+      </LogoWrapper>
       <Nav>
         <NavList>
           <NavItem>

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import reset from 'styled-reset'
+import { lighten } from 'polished'
 import Header from './Header'
 
 export const theme = {
@@ -8,7 +9,9 @@ export const theme = {
   burntSienna: '#E9724C',
   wildSand: '#F5F4F4',
   hippieBlue: '#5C9EAD',
+  hoverHippieBlue: lighten(0.2, '#5C9EAD'),
   outerSpace: '#313638',
+  hoverOuterSpace: lighten(0.4, '#313638'),
   primaryFont: 'Open Sans',
   cardBoxShadow: '6px 8px 20px 0 rgba(0, 0, 0, 0.08)',
   buttonBoxShadow: '0 2px 10px 2px rgba(0, 0, 0, 0.2)',
