@@ -58,13 +58,13 @@ export const ImageThree = styled.div`
   background-size: cover;
 `
 
-export const H2 = styled.h2`
+export const Subtitle = styled.h2`
   font-size: 30px;
   font-weight: 900;
   margin-bottom: 50px;
 `
 
-export const P = styled.p`
+export const Description = styled.p`
   text-align: center;
   width: 70%;
   font-size: 20px;
