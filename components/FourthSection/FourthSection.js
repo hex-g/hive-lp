@@ -9,7 +9,7 @@ const FourthSection = () => {
         </Description>
         <Container>
           <form>
-            <TextInput type="Text" placeholder='Seu email de contato'/>
+            <TextInput type="email" placeholder='Seu email de contato'/>
             <Button type="submit" value="Enviar">Enviar</Button>
           </form>
         </Container>

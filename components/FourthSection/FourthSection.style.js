@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-width: 100vw;
+width: calc(100vw - 20px);
 height: 50%;
 display: flex;
 flex-direction: column;
