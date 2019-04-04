@@ -13,21 +13,21 @@ background-color: #F5F5F5;
 export const Description = styled.p`
   text-align: center;
   width: 450px;
-  font-size: 20px;
+  font-size: 18px;
   margin: 50px 0 0 0;
 `
 
 export const Container = styled.div`
   text-align: center;
   width: 700px;
-  font-size: 20px;
+  font-size: 18px;
   margin: 50px 0 50px 0;
 `
 
 export const TextInput = styled.input`
   text-align: left;
   width: 450px;
-  font-size: 20px;
+  font-size: 18px;
   margin: 20px;
   height: 30px;
   padding: 10px;
@@ -43,7 +43,7 @@ export const Button = styled.button`
   border-radius: 7px;
   box-shadow: ${props => props.theme.buttonBoxShadow};
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   margin: 20px;
   background: ${props => props.theme.hippieBlue};
   color: ${props => props.theme.wildSand};
