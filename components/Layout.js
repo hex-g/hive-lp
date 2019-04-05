@@ -12,17 +12,27 @@ export const theme = {
   hoverHippieBlue: lighten(0.2, '#5C9EAD'),
   outerSpace: '#313638',
   hoverOuterSpace: lighten(0.4, '#313638'),
-  primaryFont: 'Open Sans',
   cardBoxShadow: '6px 8px 20px 0 rgba(0, 0, 0, 0.08)',
   buttonBoxShadow: '0 2px 10px 2px rgba(0, 0, 0, 0.2)',
-  inputBoxShadow: '0 2px 10px 2px rgba(0, 0, 0, 0.07)'
+  inputBoxShadow: '0 2px 10px 2px rgba(0, 0, 0, 0.07)',
+  primaryFont: 'Poppins',
+  secondaryFont: 'Lato',
+  hugeTitle: '64px',
+  largeTitle: '48px',
+  mediumTitle: '40px',
+  smallTitle: '32px',
+  largeText: '24px',
+  mediumText: '18px',
+  smallText: '12px'
 }
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+  @import url('https://fonts.googleapis.com/css?family=Poppins:500,600,700');
   body {
-    font-family: ${props => props.theme.primaryFont}, sans-serif;
+    font-family: ${props => props.theme.secondaryFont}, sans-serif;
+    font-weight: lighter;
     color: ${props => props.theme.outerSpace};
     background-color: ${props => props.theme.wildSand};
   }
