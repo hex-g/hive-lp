@@ -12,6 +12,7 @@ export const theme = {
   hoverHippieBlue: lighten(0.2, '#5C9EAD'),
   outerSpace: '#313638',
   hoverOuterSpace: lighten(0.4, '#313638'),
+  placeholderOuterSpace: lighten(0.6, '#313638'),
   cardBoxShadow: '6px 8px 20px 0 rgba(0, 0, 0, 0.08)',
   buttonBoxShadow: '0 2px 10px 2px rgba(0, 0, 0, 0.2)',
   inputBoxShadow: '0 2px 10px 2px rgba(0, 0, 0, 0.07)',
