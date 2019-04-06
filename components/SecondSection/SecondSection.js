@@ -1,28 +1,38 @@
 import React from 'react'
-import { Section, Title, SquareContainer, Square, ImageOne, ImageTwo, ImageThree, Subtitle, Description } from './SecondSection.style'
+import {
+  Section,
+  Title,
+  SquareContainer,
+  Square,
+  SquareDescription,
+  Subtitle,
+  SubtitleOpenSource,
+  Description
+} from './SecondSection.style'
+import SvgMapping from '../SvgMapping'
 
 const SecondSection = () => {
   return (
     <Section>
-      <Title>O que é Hive ?</Title>
+      <Title>O que é a Hive ?</Title>
       <SquareContainer>
         <Square>
-          <ImageOne />
+          <SvgMapping name="customizable" />
           <Subtitle>Personalizável</Subtitle>
-          <Description>A Hive é facilmente personalizável de forma nativa para atender o contexto da instituição.</Description>
+          <SquareDescription>A Hive é facilmente personalizável de forma nativa para atender o contexto da instituição.</SquareDescription>
         </Square>
         <Square>
-          <ImageTwo />
-          <Subtitle>Open Source</Subtitle>
-          <Description>A plataforma tem o código aberto e sugestões são sempre bem-vindas!</Description>
+        <SvgMapping name="openSource" />
+          <SubtitleOpenSource>Open Source</SubtitleOpenSource>
+          <SquareDescription>A plataforma tem o código aberto e incentivamos sugestões e construções colaborativas.</SquareDescription>
         </Square>
         <Square>
-          <ImageThree />
+          <SvgMapping name="gamification" />
           <Subtitle>Gamificação</Subtitle>
-          <Description>Na Hive os alunos constroem seus perfis de acordo com o desempenho acadêmico.</Description>
+          <SquareDescription>Na Hive os alunos constroem seus perfis de acordo com o desempenho acadêmico.</SquareDescription>
         </Square>
       </SquareContainer>
-      <Description>Hive é uma plataforma de <b>gestão acadêmica</b> para alunos e professores. Na ferramenta, o corpo docente disponibiliza e gerencia conteúdos para suas turmas, enquanto os estudantes compartilham suas anotações e interagem no fórum de perguntas. A Hive acredita que <b>aprender é uma constante</b>, por isso disponibilizamos ferramentas de produtividade e elementos de gamificação para facilitar a sinergia dentro da instituição de ensino.</Description>
+      <Description>Hive é uma plataforma de <span>gestão acadêmica</span> para alunos e professores. Na ferramenta, o corpo docente disponibiliza e gerencia conteúdos para suas turmas, enquanto os estudantes compartilham suas anotações e interagem no fórum de perguntas. A Hive acredita que <span>aprender é uma constante</span>, por isso disponibilizamos ferramentas de produtividade e elementos de gamificação para facilitar a sinergia dentro da instituição de ensino.</Description>
     </Section>
   )
 }

@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-width: calc(100vw - 20px);
-height: 50%;
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #F5F5F5;
+  width: calc(100vw - 20px);
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${props => props.theme.wildSand};
 `
 
 
@@ -34,7 +34,11 @@ export const TextInput = styled.input`
   border-radius: 7px;
   outline: none;
   border: none;
-  box-shadow: ${props => props.theme.buttonBoxShadow};
+  box-shadow: ${props => props.theme.inputBoxShadow};
+  &::placeholder {
+    color: ${props => props.theme.placeholderOuterSpace};
+    font-size: ${props => props.theme.mediumText};
+  }
 `
 
 export const Button = styled.button`
@@ -43,7 +47,7 @@ export const Button = styled.button`
   border-radius: 7px;
   box-shadow: ${props => props.theme.buttonBoxShadow};
   text-align: center;
-  font-size: 18px;
+  font-size: ${props => props.theme.mediumText};
   margin: 20px;
   background: ${props => props.theme.hippieBlue};
   color: ${props => props.theme.wildSand};
