@@ -67,21 +67,15 @@ export const ShowCaseDescription = styled.div`
   left: 50%;
 `
 
-export const LineWrapperUp = styled.div`
+export const LineWrapper = styled.div`
   position: absolute;
-  top: -170px;
+  top: ${props => props.up ? '-170px' : '-30px'};
   left: 30px;
 `
 
-export const LineWrapperDown = styled.div`
+export const LineHorizontal = styled.span`
   position: absolute;
-  top: -30px;
-  left: 30px;
-`
-
-export const LineHorizontalUp = styled.span`
-  position: absolute;
-  top: -12px;
+  top: ${props => props.up ? '-12px' : '62px'};
   left: -13px;
   display: inline-block;
   height: 3px;
@@ -89,19 +83,9 @@ export const LineHorizontalUp = styled.span`
   background-color: ${props => props.theme.rajah};
 `
 
-export const LineHorizontalDown = styled.span`
+export const LineVertical = styled.span`
   position: absolute;
-  top: 62px;
-  left: -13px;
-  display: inline-block;
-  height: 3px;
-  width: 100px;
-  background-color: ${props => props.theme.rajah};
-`
-
-export const LineVerticalUp = styled.span`
-  position: absolute;
-  top: -37px;
+  top: ${props => props.up ? '-37px' : '37px'};
   left: 85px;
   display: inline-block;
   width: 2px;
@@ -109,46 +93,19 @@ export const LineVerticalUp = styled.span`
   background-color: ${props => props.theme.rajah};
 `
 
-export const LineVerticalDown = styled.span`
+export const LineDiagonal = styled.span`
   position: absolute;
-  top: 37px;
-  left: 85px;
-  display: inline-block;
-  width: 2px;
-  height: 50px;
-  background-color: ${props => props.theme.rajah};
-`
-
-export const LineDiagonalUp = styled.span`
-  position: absolute;
-  top: 0;
+  top: ${props => props.up ? '0' : '51px'};
   left: -60px;
   display: inline-block;
   height: 2px;
   width: 50px;
-  transform: rotate(-28deg);
+  transform: ${props => props.up ? 'rotate(-28deg)' : 'rotate(27deg)'};
   background-color: ${props => props.theme.rajah};
 `
 
-export const LineDiagonalDown = styled.span`
+export const Description = styled.p`
   position: absolute;
-  top: 51px;
-  left: -60px;
-  display: inline-block;
-  height: 2px;
-  width: 50px;
-  transform: rotate(28deg);
-  background-color: ${props => props.theme.rajah};
-`
-
-export const DescriptionUp = styled.p`
-  position: absolute;
-  top: -200px;
-  left: 135px;
-`
-
-export const DescriptionDown = styled.p`
-  position: absolute;
-  top: 15px;
+  top: ${props => props.up ? '-200px' : '15px'};
   left: 135px;
 `

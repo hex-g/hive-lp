@@ -11,16 +11,11 @@ import {
   ImageContainer,
   ImageHive,
   ShowCaseDescription,
-  DescriptionUp,
-  DescriptionDown,
-  LineWrapperUp,
-  LineWrapperDown,
-  LineHorizontalUp,
-  LineHorizontalDown,
-  LineVerticalUp,
-  LineVerticalDown,
-  LineDiagonalUp,
-  LineDiagonalDown
+  Description,
+  LineWrapper,
+  LineHorizontal,
+  LineVertical,
+  LineDiagonal,
 } from './ThirdSection.style'
 
 import Image from './desktop.png'
@@ -46,18 +41,18 @@ const ThirdSection = () => {
             <ImageHive src={Image} />
           </ImageContainer>
           <ShowCaseDescription>
-            <LineWrapperUp>
-              <LineDiagonalUp />
-              <LineHorizontalUp />
-              <LineVerticalUp />
-            </LineWrapperUp>
-            <DescriptionUp>Suporte completo ao Markdown com três modos de visualizaço</DescriptionUp>
-            <LineWrapperDown>
-              <LineDiagonalDown />
-              <LineHorizontalDown />
-              <LineVerticalDown />
-            </LineWrapperDown>
-            <DescriptionDown>Armazenamento e compartilhamento dentro da própria plataforma</DescriptionDown>
+            <LineWrapper up>
+              <LineDiagonal up />
+              <LineHorizontal up />
+              <LineVertical up />
+            </LineWrapper>
+            <Description up>Suporte completo ao Markdown com três modos de visualizaço</Description>
+            <LineWrapper>
+              <LineDiagonal />
+              <LineHorizontal />
+              <LineVertical />
+            </LineWrapper>
+            <Description>Armazenamento e compartilhamento dentro da própria plataforma</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
       </ShowCase>
