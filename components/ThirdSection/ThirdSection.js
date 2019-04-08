@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Section,
   NavigationBar,
@@ -21,22 +21,47 @@ import {
 import Image from './desktop.png'
 
 const ThirdSection = () => {
+  const [show, setShow] = useState({
+    editor: true,
+    forum: false,
+    formulario: false,
+    perfil: false
+  })
+
   return (
     <Section>
       <NavigationBar>
         <NavigationTitle>Editor sem complicações</NavigationTitle>
         <NavigationList>
-          <NavigationItem>Editor</NavigationItem>
+          <NavigationItem>
+            <button
+              onClick={() =>
+                setShow({
+                  editor: true,
+                  forum: false,
+                  formulario: false,
+                  perfil: false
+                })}
+            >
+              Editor
+            </button>
+          </NavigationItem>
           <Pipe />
-          <NavigationItem>Fórum</NavigationItem>
+          <NavigationItem>
+            <button onClick={() => setShow({ editor: false, forum: true, formulario: false, perfil: false })}>Fórum</button>
+          </NavigationItem>
           <Pipe />
-          <NavigationItem>Formulário</NavigationItem>
+          <NavigationItem>
+            <button>Fórum</button>
+          </NavigationItem>
           <Pipe />
-          <NavigationItem>Perfil</NavigationItem>
+          <NavigationItem>
+            <button>Fórum</button>
+          </NavigationItem>
         </NavigationList>
       </NavigationBar>
       <ShowCase>
-        <ShowCaseItem>
+        <ShowCaseItem show={show.editor}>
           <ImageContainer>
             <ImageHive src={Image} />
           </ImageContainer>
@@ -47,6 +72,25 @@ const ThirdSection = () => {
               <LineVertical up />
             </LineWrapper>
             <Description up>Suporte completo ao Markdown com três modos de visualizaço</Description>
+            <LineWrapper>
+              <LineDiagonal />
+              <LineHorizontal />
+              <LineVertical />
+            </LineWrapper>
+            <Description>Armazenamento e compartilhamento dentro da própria plataforma</Description>
+          </ShowCaseDescription>
+        </ShowCaseItem>
+        <ShowCaseItem show={show.forum}>
+          <ImageContainer>
+            <ImageHive src={Image} />
+          </ImageContainer>
+          <ShowCaseDescription>
+            <LineWrapper up>
+              <LineDiagonal up />
+              <LineHorizontal up />
+              <LineVertical up />
+            </LineWrapper>
+            <Description up>AAQUI TA O FORUM TCHIQUIBROWN</Description>
             <LineWrapper>
               <LineDiagonal />
               <LineHorizontal />

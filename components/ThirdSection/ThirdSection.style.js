@@ -46,7 +46,7 @@ export const ShowCase = styled.ul`
 `
 
 export const ShowCaseItem = styled.li`
-  display: block;
+  display: ${props => props.show ? 'block' : 'none'};
   position: relative;
   width: 1200px;
 `
