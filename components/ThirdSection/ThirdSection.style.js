@@ -29,6 +29,16 @@ export const NavigationList = styled.ul`
 export const NavigationItem = styled.li`
   list-style: none;
   padding: 0 10px;
+  button {
+    background: none;
+    border: none;
+    font-size: ${props => props.theme.mediumText};
+    font-weight: ${props => props.show ? 'bold' : 'lighter'};
+    cursor: pointer;
+    &:hover {
+      color: ${props => props.theme.hoverOuterSpace};
+    }
+  }
 `
 
 export const Pipe = styled.span`
@@ -52,12 +62,15 @@ export const ShowCaseItem = styled.li`
 `
 
 export const ImageContainer = styled.div`
+  display: flex;
+  justify-content: ${props => props.right ? 'flex-end' : 'flex-start'};
+  align-items: center;
   position: absolute;
-  left: 10%;
+  left: ${props => props.right ? '-25%' : '10%'};
 `
 
 export const ImageHive = styled.img`
-  width: 50%;
+  width: ${props => props.right ? '40%' : '50%'};
 `
 
 export const ShowCaseDescription = styled.div`
@@ -70,7 +83,8 @@ export const ShowCaseDescription = styled.div`
 export const LineWrapper = styled.div`
   position: absolute;
   top: ${props => props.up ? '-170px' : '-30px'};
-  left: 30px;
+  left: ${props => props.right ? '-65px' : '30px'};
+  transform: ${props => props.right ? 'scale(-1, 1)' : 'unset'};
 `
 
 export const LineHorizontal = styled.span`
@@ -107,5 +121,7 @@ export const LineDiagonal = styled.span`
 export const Description = styled.p`
   position: absolute;
   top: ${props => props.up ? '-200px' : '15px'};
-  left: 135px;
+  left: ${props => props.right ? '-430px' : '135px'};
+  width: ${props => props.right ? '260px' : 'auto'};
+  text-align: ${props => props.right ? 'right' : 'left'};
 `

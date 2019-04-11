@@ -33,7 +33,7 @@ const ThirdSection = () => {
       <NavigationBar>
         <NavigationTitle>Editor sem complicações</NavigationTitle>
         <NavigationList>
-          <NavigationItem>
+          <NavigationItem show={show.editor}>
             <button
               onClick={() =>
                 setShow({
@@ -43,20 +43,50 @@ const ThirdSection = () => {
                   perfil: false
                 })}
             >
-              Editor
+              Anotações
             </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem>
-            <button onClick={() => setShow({ editor: false, forum: true, formulario: false, perfil: false })}>Fórum</button>
+          <NavigationItem show={show.forum}>
+            <button 
+              onClick={() =>
+                setShow({
+                  editor: false,
+                  forum: true,
+                  formulario: false,
+                  perfil: false
+                })}
+            >
+              Fórum
+            </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem>
-            <button>Fórum</button>
+          <NavigationItem show={show.formulario}>
+            <button 
+              onClick={() =>
+                setShow({
+                  editor: false,
+                  forum: false,
+                  formulario: true,
+                  perfil: false
+                })}
+            >
+              Formulário
+            </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem>
-            <button>Fórum</button>
+          <NavigationItem show={show.perfil}>
+            <button 
+              onClick={() =>
+                setShow({
+                  editor: false,
+                  forum: false,
+                  formulario: false,
+                  perfil: true
+                })}
+            >
+              Perfil
+            </button>
           </NavigationItem>
         </NavigationList>
       </NavigationBar>
@@ -81,6 +111,25 @@ const ThirdSection = () => {
           </ShowCaseDescription>
         </ShowCaseItem>
         <ShowCaseItem show={show.forum}>
+          <ImageContainer right>
+            <ImageHive right src={Image} />
+          </ImageContainer>
+          <ShowCaseDescription>
+            <LineWrapper up right>
+              <LineDiagonal up />
+              <LineHorizontal up />
+              <LineVertical up />
+            </LineWrapper>
+            <Description up right>Compartilhamento de informações entre alunos e professores</Description>
+            <LineWrapper right>
+              <LineDiagonal />
+              <LineHorizontal />
+              <LineVertical />
+            </LineWrapper>
+            <Description right>Armazenamento e compartilhamento dentro da própria plataforma</Description>
+          </ShowCaseDescription>
+        </ShowCaseItem>
+        <ShowCaseItem show={show.formulario}>
           <ImageContainer>
             <ImageHive src={Image} />
           </ImageContainer>
@@ -90,13 +139,32 @@ const ThirdSection = () => {
               <LineHorizontal up />
               <LineVertical up />
             </LineWrapper>
-            <Description up>AAQUI TA O FORUM TCHIQUIBROWN</Description>
+            <Description up>Compartilhamento de informações entre alunos e professores</Description>
             <LineWrapper>
               <LineDiagonal />
               <LineHorizontal />
               <LineVertical />
             </LineWrapper>
             <Description>Armazenamento e compartilhamento dentro da própria plataforma</Description>
+          </ShowCaseDescription>
+        </ShowCaseItem>
+        <ShowCaseItem show={show.perfil}>
+          <ImageContainer right>
+            <ImageHive right src={Image} />
+          </ImageContainer>
+          <ShowCaseDescription>
+            <LineWrapper right up>
+              <LineDiagonal up />
+              <LineHorizontal up />
+              <LineVertical up />
+            </LineWrapper>
+            <Description right up>Compartilhamento de informações entre alunos e professores</Description>
+            <LineWrapper right>
+              <LineDiagonal />
+              <LineHorizontal />
+              <LineVertical />
+            </LineWrapper>
+            <Description right>Armazenamento e compartilhamento dentro da própria plataforma</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
       </ShowCase>
