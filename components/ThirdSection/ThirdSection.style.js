@@ -1,4 +1,10 @@
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
+
+const moveShowCase = keyframes`
+  0% { left: 0px;}
+  50% { left: 50px;}
+  100% { left: 100px;}
+`
 
 export const Section = styled.section`
   display: flex;
@@ -57,6 +63,7 @@ export const ShowCase = styled.ul`
 
 export const ShowCaseItem = styled.li`
   display: ${props => props.show ? 'block' : 'none'};
+  animation: ${moveShowCase};
   position: relative;
   width: 1200px;
 `
