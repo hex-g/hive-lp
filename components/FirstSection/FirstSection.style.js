@@ -52,9 +52,19 @@ export const Button = styled.button`
   font-weight: bold;
   color: ${props => props.theme.hippieBlue};
   margin: 60px 20px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: ${props => props.theme.HippieBlue};
+    color: ${props => props.theme.wildSand};
+  }
 `
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.img`
   width: 600px;
   height: 300px;
+  float: right;
+  position: absolute;
+  padding: 0 80px;
+  top: 0;
 `

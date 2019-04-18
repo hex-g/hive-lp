@@ -2,11 +2,13 @@ import React from 'react'
 import { Section, TextoPrincipal, TextoPrincipal__Bold , Hexagono, ContentWrapper, Button, ImageWrapper } from './FirstSection.style'
 import SvgMapping from '../SvgMapping'
 
+import Image from './monitor.png'
+
 const FirstSection = () => {
   return (
     <Section>
       <Hexagono>
-          <SvgMapping name="hexagon" scale="1"/>
+          <SvgMapping name="hexagon"/>
       </Hexagono>
       <ContentWrapper>
         <TextoPrincipal>
@@ -15,7 +17,7 @@ const FirstSection = () => {
           para o aluno e para o professor. 
         </TextoPrincipal>
         <Button>Experimente a Hive</Button>
-        <ImageWrapper>aaaa</ImageWrapper>
+        <ImageWrapper src={Image} />
       </ContentWrapper>
     </Section>
   )
