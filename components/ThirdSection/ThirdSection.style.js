@@ -1,10 +1,4 @@
-import styled, { css, keyframes } from 'styled-components'
-
-const moveShowCase = keyframes`
-  0% { left: 0px;}
-  50% { left: 50px;}
-  100% { left: 100px;}
-`
+import styled, { css } from 'styled-components'
 
 export const Section = styled.section`
   display: flex;
@@ -62,10 +56,17 @@ export const ShowCase = styled.ul`
 `
 
 export const ShowCaseItem = styled.li`
-  display: ${props => props.show ? 'block' : 'none'};
-  animation: ${moveShowCase};
-  position: relative;
+  transition: opacity 0.5s linear, transform 0.5s linear;
+  opacity: 1;
+  transform: translateX(0);
+  position: absolute;
   width: 1200px;
+  height: 355px;
+
+  ${props => !props.show && css`
+    opacity: 0;
+    transform: translateX(20%);
+  `}
 `
 
 export const ImageContainer = styled.div`
@@ -82,6 +83,7 @@ export const ImageHive = styled.img`
 
 export const ShowCaseDescription = styled.div`
   position: absolute;
+  margin-top: 75px;
   width: 400px;
   top: 50%;
   left: 50%;
