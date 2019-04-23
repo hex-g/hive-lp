@@ -2,7 +2,7 @@ import React from 'react'
 import { 
         Section, 
         MainText,
-        Hexagon,
+        HexagonWrapper,
         ContentWrapper,
         Button,
         ImageWrapper
@@ -21,7 +21,7 @@ const FirstSection = () => {
         <MainText>
           Maior
           <span> produtividade acadêmica </span> 
-          para o aluno e para o professor. 
+          para o aluno e para o professor.
         </MainText>
         <Button>Experimente a Hive</Button>
         <ImageWrapper src={Image} />
