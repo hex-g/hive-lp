@@ -6,7 +6,7 @@ export const Section = styled.section`
   background-color: ${props => props.theme.athensGray};
 `
 
-export const TextoPrincipal = styled.div `
+export const MainText = styled.div `
   width: 350px;
   font-family: ${props => props.theme.secondaryFont};
   font-size: 24px;
@@ -16,13 +16,13 @@ export const TextoPrincipal = styled.div `
   border-left: 2px solid ${props => props.theme.rajah};
   padding-left: 10px;
   line-height: 30px;
+
+  span{
+    font-weight: bold;
+  }
 `
 
-export const TextoPrincipal__Bold = styled.span`
-  font-weight: bold;
-`
-
-export const Hexagono = styled.div`
+export const HexagonWrapper = styled.div`
   position: relative;
   margin-top: -150px;
   z-index: -1;
