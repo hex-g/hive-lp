@@ -22,8 +22,9 @@ export const theme = {
   largeTitle: '48px',
   mediumTitle: '40px',
   smallTitle: '32px',
-  largeText: '24px',
-  mediumText: '18px',
+  hugeText: '24px',
+  largeText: '18px',
+  mediumText: '16px',
   smallText: '12px'
 }
 

@@ -12,7 +12,7 @@ export const Section = styled.section`
 
 export const Description = styled.p`
   text-align: center;
-  width: 450px;
+  width: 360px;
   font-size: 18px;
   margin: 50px 0 0 0;
 `
