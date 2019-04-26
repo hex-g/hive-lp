@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import reset from 'styled-reset'
 import { lighten } from 'polished'
-import Header from './Header'
 
 export const theme = {
   rajah: '#F6BD60',
@@ -45,7 +44,6 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <Fragment>
         <GlobalStyle />
-          <Header />
           {children}
       </Fragment>
     </ThemeProvider>
