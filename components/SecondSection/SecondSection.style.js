@@ -50,6 +50,7 @@ export const SquareDescription = styled.p`
 `
 
 export const Description = styled.p`
+  max-width: 1200px;
   padding: 0 150px;
   text-align: center;
   line-height: 1.3em;
