@@ -22,10 +22,10 @@ import Image from './desktop.png'
 
 const ThirdSection = () => {
   const [show, setShow] = useState({
-    editor: true,
-    forum: false,
-    formulario: false,
-    perfil: false
+    nest: true,
+    hiveShare: false,
+    hiveCentral: false,
+    profile: false
   })
 
   return (
@@ -33,56 +33,56 @@ const ThirdSection = () => {
       <NavigationBar>
         <NavigationTitle>Editor sem complicações</NavigationTitle>
         <NavigationList>
-          <NavigationItem show={show.editor}>
+          <NavigationItem show={show.nest}>
             <button
               onClick={() =>
                 setShow({
-                  editor: true,
-                  forum: false,
-                  formulario: false,
-                  perfil: false
+                  nest: true,
+                  hiveShare: false,
+                  hiveCentral: false,
+                  profile: false
                 })}
             >
-              Anotações
+              Portal
             </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem show={show.forum}>
+          <NavigationItem show={show.hiveShare}>
             <button 
               onClick={() =>
                 setShow({
-                  editor: false,
-                  forum: true,
-                  formulario: false,
-                  perfil: false
+                  nest: false,
+                  hiveShare: true,
+                  hiveCentral: false,
+                  profile: false
                 })}
             >
-              Fórum
+              HiveShare
             </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem show={show.formulario}>
+          <NavigationItem show={show.hiveCentral}>
             <button 
               onClick={() =>
                 setShow({
-                  editor: false,
-                  forum: false,
-                  formulario: true,
-                  perfil: false
+                  nest: false,
+                  hiveShare: false,
+                  hiveCentral: true,
+                  profile: false
                 })}
             >
-              Formulário
+              HiveCentral
             </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem show={show.perfil}>
+          <NavigationItem show={show.profile}>
             <button 
               onClick={() =>
                 setShow({
-                  editor: false,
-                  forum: false,
-                  formulario: false,
-                  perfil: true
+                  nest: false,
+                  hiveShare: false,
+                  hiveCentral: false,
+                  profile: true
                 })}
             >
               Perfil
@@ -91,7 +91,7 @@ const ThirdSection = () => {
         </NavigationList>
       </NavigationBar>
       <ShowCase>
-        <ShowCaseItem show={show.editor}>
+        <ShowCaseItem show={show.nest}>
           <ImageContainer>
             <ImageHive src={Image} />
           </ImageContainer>
@@ -101,16 +101,16 @@ const ThirdSection = () => {
               <LineHorizontal up />
               <LineVertical up />
             </LineWrapper>
-            <Description up>Suporte completo ao Markdown com três modos de visualizaço</Description>
+            <Description up>Agrega todas as ferramentas e avisos da instituição de ensino</Description>
             <LineWrapper>
               <LineDiagonal />
               <LineHorizontal />
               <LineVertical />
             </LineWrapper>
-            <Description>Armazenamento e compartilhamento dentro da própria plataforma</Description>
+            <Description>Mantém o aluno e o professor em alerta sobre materiais compartilhados</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
-        <ShowCaseItem show={show.forum}>
+        <ShowCaseItem show={show.hiveShare}>
           <ImageContainer right>
             <ImageHive right src={Image} />
           </ImageContainer>
@@ -126,10 +126,10 @@ const ThirdSection = () => {
               <LineHorizontal />
               <LineVertical />
             </LineWrapper>
-            <Description right>Armazenamento e compartilhamento dentro da própria plataforma</Description>
+            <Description right>Assuntos separados por tags personalizáveis</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
-        <ShowCaseItem show={show.formulario}>
+        <ShowCaseItem show={show.hiveCentral}>
           <ImageContainer>
             <ImageHive src={Image} />
           </ImageContainer>
@@ -139,7 +139,7 @@ const ThirdSection = () => {
               <LineHorizontal up />
               <LineVertical up />
             </LineWrapper>
-            <Description up>Compartilhamento de informações entre alunos e professores</Description>
+            <Description up>Suporte completo ao Markdown com separação de blocos de anotações</Description>
             <LineWrapper>
               <LineDiagonal />
               <LineHorizontal />
@@ -148,7 +148,7 @@ const ThirdSection = () => {
             <Description>Armazenamento e compartilhamento dentro da própria plataforma</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
-        <ShowCaseItem show={show.perfil}>
+        <ShowCaseItem show={show.profile}>
           <ImageContainer right>
             <ImageHive right src={Image} />
           </ImageContainer>
@@ -158,13 +158,13 @@ const ThirdSection = () => {
               <LineHorizontal up />
               <LineVertical up />
             </LineWrapper>
-            <Description right up>Compartilhamento de informações entre alunos e professores</Description>
+            <Description right up>Gamificação de bordas personalizáveis e emblemas desbloqueáveis</Description>
             <LineWrapper right>
               <LineDiagonal />
               <LineHorizontal />
               <LineVertical />
             </LineWrapper>
-            <Description right>Armazenamento e compartilhamento dentro da própria plataforma</Description>
+            <Description right>Showcase de materiais compartilhados e elementos conquistados</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
       </ShowCase>

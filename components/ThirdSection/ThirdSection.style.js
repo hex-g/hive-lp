@@ -130,7 +130,7 @@ export const LineDiagonal = styled.span`
 export const Description = styled.p`
   position: absolute;
   top: ${props => props.up ? '-200px' : '15px'};
-  left: ${props => props.right ? '-430px' : '135px'};
-  width: ${props => props.right ? '260px' : 'auto'};
+  left: ${props => props.right ? '-445px' : '135px'};
+  width: ${props => props.right ? '270px' : 'auto'};
   text-align: ${props => props.right ? 'right' : 'left'};
 `
