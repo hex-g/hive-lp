@@ -20,6 +20,9 @@ export const LoginWrapper = styled.div`
 export const Logo = styled.div`
   position: relative;
   top: 10px;
+  tspan {
+    font-family: ${props => props.theme.primaryFont}, sans-serif;
+  }
 `
 
 export const Title = styled.h2`

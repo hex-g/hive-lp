@@ -79,6 +79,7 @@ export const ImageContainer = styled.div`
 
 export const ImageHive = styled.img`
   width: ${props => props.right ? '40%' : '50%'};
+  border: 3px solid white;
 `
 
 export const ShowCaseDescription = styled.div`

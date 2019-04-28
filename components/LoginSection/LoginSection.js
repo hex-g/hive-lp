@@ -1,5 +1,16 @@
 import React from 'react'
-import { Section, LoginWrapper, Logo, Title, TextInput, Form, Label, Button, Description } from './LoginSection.style'
+import Link from 'next/link'
+import {
+  Section,
+  LoginWrapper,
+  Logo,
+  Title,
+  TextInput,
+  Form,
+  Label,
+  Button,
+  Description
+} from './LoginSection.style'
 import SvgMapping from '../SvgMapping'
 
 const LoginSection = () => {
@@ -7,7 +18,11 @@ const LoginSection = () => {
     <Section>
       <LoginWrapper>
         <Logo>
-          <SvgMapping name='logo' />
+          <Link href='/'>
+          <a>
+            <SvgMapping name='logo' />
+          </a>
+          </Link>
         </Logo>
         <Title>Entre na <span>Hive</span> da sua instituição!</Title>
         <Form>
@@ -22,7 +37,7 @@ const LoginSection = () => {
         <Description>Ainda não possui uma conta? <span>Cadastre-se</span> agora mesmo! :)</Description>
       </LoginWrapper>
     </Section>
-      )
-    }
-    
+  )
+}
+
 export default LoginSection
