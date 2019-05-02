@@ -1,5 +1,15 @@
 import React from 'react'
-import { Section, LoginWrapper, Logo, Title, TextInput, Form, Label, Button, Description } from './LoginSection.style'
+import { 
+  Section, 
+  LoginWrapper, 
+  Logo, 
+  Title, 
+  TextInput, 
+  Form, 
+  Label, 
+  Button, 
+  Description 
+} from './LoginSection.style'
 import SvgMapping from '../SvgMapping'
 
 const LoginSection = () => {
