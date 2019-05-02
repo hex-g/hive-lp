@@ -70,6 +70,49 @@ export const LastStepItem = styled(StepItem)`
   }
 `
 
+export const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 export const FormWrapper = styled.div`
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  padding-top: 32px;
   background-color: ${props => props.theme.wildSand};
+`
+
+export const FlavorText = styled.h2`
+  font-size: ${props => props.theme.smallTitle};
+  font-weight: bold;
+  text-align: center;
+`
+
+export const Form = styled.form`
+  padding: 0 80px;
+`
+
+export const Label = styled.label`
+  display: block;
+  font-weight: ${props => props.bold ? 'bold' : 'unset'};
+`
+
+export const TextInput = styled.input`
+  text-align: left;
+  font-size: 18px;
+  margin-top: 10px;
+  height: 30px;
+  padding: 10px 10px;
+  border-radius: 7px;
+  outline: none;
+  border: none;
+  box-shadow: ${props => props.theme.inputBoxShadow};
+  &::placeholder {
+    color: ${props => props.theme.placeholderOuterSpace};
+    font-size: ${props => props.theme.mediumText};
+  }
+`
+
+export const ButtonWrapper = styled.div`
+  background-color: white;
 `

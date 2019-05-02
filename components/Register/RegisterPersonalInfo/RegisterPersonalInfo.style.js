@@ -42,11 +42,12 @@ export const StepsList = styled.div`
 
 export const StepItem = styled.div`
   padding: 24px 0;
+  position: relative;
 
   &::after {
     display: block;
     position: absolute;
-    left: 121px;
+    left: 13px;
     content: '';
     width: 2px;
     height: 49px;

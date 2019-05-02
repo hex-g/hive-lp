@@ -3,13 +3,19 @@ import Link from 'next/link'
 import {
   Section,
   Sidebar,
-  FormWrapper,
   Logo,
   Steps,
   StepsList,
   FirstStepItem,
   StepItem,
-  LastStepItem
+  LastStepItem,
+  ImageWrapper,
+  FormWrapper,
+  Form,
+  ButtonWrapper,
+  FlavorText,
+  Label,
+  TextInput
 } from './RegisterAccount.style'
 import SvgMapping from '../../SvgMapping'
 
@@ -43,19 +49,29 @@ const RegisterAccount = () => {
             <LastStepItem>
               <Link href='#'>
                 <a>
-                  <SvgMapping name='unfillRegisterHexagonGroup' />
+                  <SvgMapping name='unfillRegisterHexagonGroupConfirmation' />
                 </a>
               </Link>
             </LastStepItem>
           </StepsList>
         </Steps>
+        <ImageWrapper>
+          <SvgMapping name='gamification' />
+        </ImageWrapper>
       </Sidebar>
       <FormWrapper>
-        <Link href='/RegisterPersonalInfo'>
-          <a>
-            Clica aqaui!
-          </a>
-        </Link>
+        <Form>
+          <FlavorText>
+            Primeiro vamos criar seu acesso na Hive! :)
+          </FlavorText>
+          <Label bold>Usuário*</Label>
+          <TextInput type='text' placeholder='Nome de Usuário' />
+          <Label bold>Email*</Label>
+          <TextInput type='text' placeholder='Email*' />
+        </Form>
+        <ButtonWrapper>
+          aaa
+        </ButtonWrapper>
       </FormWrapper>
     </Section>
   )

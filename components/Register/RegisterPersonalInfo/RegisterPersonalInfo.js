@@ -40,17 +40,10 @@ const RegisterPersonalInfo = () => {
                 </a>
               </Link>
             </StepItem>
-            <StepItem>
-              <Link href='#'>
-                <a>
-                  <SvgMapping name='unfillRegisterHexagonGroup' />
-                </a>
-              </Link>
-            </StepItem>
             <LastStepItem>
               <Link href='#'>
                 <a>
-                  <SvgMapping name='unfillRegisterHexagonGroup' />
+                  <SvgMapping name='unfillRegisterHexagonGroupConfirmation' />
                 </a>
               </Link>
             </LastStepItem>
