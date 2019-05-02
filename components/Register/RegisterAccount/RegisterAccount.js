@@ -40,13 +40,6 @@ const RegisterAccount = () => {
                 </a>
               </Link>
             </StepItem>
-            <StepItem>
-              <Link href='#'>
-                <a>
-                  <SvgMapping name='unfillRegisterHexagonGroup' />
-                </a>
-              </Link>
-            </StepItem>
             <LastStepItem>
               <Link href='#'>
                 <a>
