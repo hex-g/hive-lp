@@ -29,7 +29,7 @@ const ThirdSection = () => {
   })
 
   return (
-    <Section>
+    <Section id='tools'>
       <NavigationBar>
         <NavigationTitle>Editor sem complicações</NavigationTitle>
         <NavigationList>

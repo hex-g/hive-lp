@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <HeaderHolder>
       <LogoWrapper>
-        <Link href='/'>
+        <Link href='#top'>
           <a>
             <SvgMapping name="logo" />
           </a>
@@ -25,12 +25,12 @@ const Header = () => {
       <Nav>
         <NavList>
           <NavItem>
-            <Link href='/'>
+            <Link href='#about'>
               <a>O que é Hive?</a>
             </Link>
           </NavItem>
           <NavItem>
-            <Link href='/'>
+            <Link href='#tools'>
               <a>Ferramentas</a>
             </Link>
           </NavItem>
