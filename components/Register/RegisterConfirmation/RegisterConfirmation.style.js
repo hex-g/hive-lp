@@ -65,6 +65,10 @@ export const FirstStepItem = styled(StepItem)`
 `
 
 export const LastStepItem = styled(StepItem)`
+  g {
+    fill: ${props => props.fill ? props.theme.rajah : 'none'};
+  }
+
   &:after {
     display: none;
   }
@@ -90,43 +94,19 @@ export const FlavorText = styled.h2`
 `
 
 export const Form = styled.form`
+  display: grid;
+  grid-template-rows: 1fr 4fr;
   padding: 0 80px;
 `
 
-export const Label = styled.label`
-  display: block;
-  font-weight: ${props => props.bold ? 'bold' : 'unset'};
+export const ConfirmationWrapper = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 `
 
-export const InputWrapper = styled.div`
-  padding-bottom: 24px;
-`
-
-export const InputHalfWrapper = styled.div`
+export const ConfirmationItem = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-bottom: 24px;
-`
-
-export const TextInput = styled.input`
-  display: block;
-  width: 90%;
-  font-size: 18px;
-  margin-top: 8px;
-  height: 30px;
-  padding: 10px 10px;
-  border-radius: 7px;
-  outline: none;
-  border: none;
-  box-shadow: ${props => props.theme.inputBoxShadow};
-  &::placeholder {
-    color: ${props => props.theme.placeholderOuterSpace};
-    font-size: ${props => props.theme.mediumText};
-  }
-`
-
-export const BigTextInput = styled(TextInput)`
-  width: 95%;
 `
 
 export const ButtonWrapper = styled.div`
@@ -134,21 +114,6 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   padding-top: 24px;
-`
-
-export const PasswordWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  div {
-    padding-top: 10px;
-  }
-`
-
-export const PasswordItem = styled.p`
-  font-size: ${props => props.theme.smallText};
-  padding: 4px 0;
-  color: ${props => props.theme.placeholderOuterSpace};
 `
 
 export const Button = styled.button`
@@ -165,6 +130,8 @@ export const Button = styled.button`
   cursor: pointer;
 
   a {
+    width: 100%;
+    height: 100%;
     color: ${props => props.cancel ? props.theme.hippieBlue : props.theme.wildSand};
     text-decoration: none;
   }

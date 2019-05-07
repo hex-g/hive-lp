@@ -14,18 +14,13 @@ import {
   Form,
   ButtonWrapper,
   FlavorText,
-  Label,
-  InputWrapper,
-  InputHalfWrapper,
-  TextInput,
-  BigTextInput,
-  PasswordWrapper,
-  PasswordItem,
-  Button
-} from './RegisterPersonalInfo.style'
+  Button,
+  ConfirmationWrapper,
+  ConfirmationItem
+} from './RegisterConfirmation.style'
 import SvgMapping from '../../SvgMapping'
 
-const RegisterPersonalInfo = () => {
+const RegisterConfirmation = () => {
   return (
     <Section>
       <Sidebar>
@@ -52,7 +47,7 @@ const RegisterPersonalInfo = () => {
                 </a>
               </Link>
             </StepItem>
-            <LastStepItem>
+            <LastStepItem fill>
               <Link href='#'>
                 <a>
                   <SvgMapping name='unfillRegisterHexagonGroupConfirmation' />
@@ -68,38 +63,28 @@ const RegisterPersonalInfo = () => {
       <FormWrapper>
         <Form>
           <FlavorText>
-            Agora precisamos confirmar alguns dados
+            Pronto! Confira se está tudo certinho.
           </FlavorText>
-          <InputHalfWrapper>
-            <div>
-              <Label bold>Nome*</Label>
-              <TextInput type='text' placeholder='Daniela' />
-            </div>
-            <div>
-              <Label bold>Sobrenome*</Label>
-              <TextInput type='text' placeholder='Santos' />
-            </div>
-          </InputHalfWrapper>
-          <InputHalfWrapper>
-            <div>
-              <Label bold>Data de nascimento*</Label>
-              <TextInput type='text' placeholder='DD/MM/AAAA' />
-            </div>
-            <div>
-              <Label bold>CPF*</Label>
-              <TextInput type='text' />
-            </div>
-          </InputHalfWrapper>
+          <ConfirmationWrapper>
+            <ConfirmationItem>
+              <div>oi</div>
+              <div>tchau</div>
+            </ConfirmationItem>
+            <ConfirmationItem>
+              <div>oi</div>
+              <div>tchau</div>
+            </ConfirmationItem>
+          </ConfirmationWrapper>
         </Form>
         <ButtonWrapper>
           <Button cancel>
-            <Link href='/RegisterAccount'>
+            <Link href='/RegisterPersonalInfo'>
               Voltar
             </Link>
           </Button>
           <Button>
-            <Link href='/RegisterConfirmation'>
-              Próximo
+            <Link href='/'>
+              Finalizar
             </Link>
           </Button>
         </ButtonWrapper>
@@ -108,4 +93,4 @@ const RegisterPersonalInfo = () => {
   )
 }
 
-export default RegisterPersonalInfo
+export default RegisterConfirmation

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import RegisterPersonalInfoComponent from '../components/Register/RegisterPersonalInfo'
 
-const SecondRegisterPage = () => {
+const RegisterPersonalInfo = () => {
   return (
     <Layout>
       <RegisterPersonalInfoComponent />
@@ -10,4 +10,4 @@ const SecondRegisterPage = () => {
   )
 }
 
-export default SecondRegisterPage
+export default RegisterPersonalInfo

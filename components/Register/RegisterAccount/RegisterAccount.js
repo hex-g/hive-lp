@@ -15,7 +15,13 @@ import {
   ButtonWrapper,
   FlavorText,
   Label,
-  TextInput
+  InputWrapper,
+  InputHalfWrapper,
+  TextInput,
+  BigTextInput,
+  PasswordWrapper,
+  PasswordItem,
+  Button
 } from './RegisterAccount.style'
 import SvgMapping from '../../SvgMapping'
 
@@ -64,13 +70,57 @@ const RegisterAccount = () => {
           <FlavorText>
             Primeiro vamos criar seu acesso na Hive! :)
           </FlavorText>
-          <Label bold>Usuário*</Label>
-          <TextInput type='text' placeholder='Nome de Usuário' />
-          <Label bold>Email*</Label>
-          <TextInput type='text' placeholder='Email*' />
+          <InputHalfWrapper>
+            <div>
+              <Label bold>Usuário*</Label>
+              <TextInput type='text' placeholder='Nome de Usuário' />
+            </div>
+            <div>
+              <Label bold>Email*</Label>
+              <TextInput type='text' placeholder='usuario@exemplo.com' />
+            </div>
+          </InputHalfWrapper>
+          <InputWrapper>
+            <Label bold>Nome da instituição de ensino*</Label>
+            <BigTextInput type='text' placeholder='BandTec - Faculdade de Tecnologia Bandeirantes' />
+          </InputWrapper>
+          <InputHalfWrapper>
+            <div>
+              <Label bold>Senha*</Label>
+              <TextInput type='password' />
+            </div>
+            <div>
+              <Label bold>Confirmação de senha*</Label>
+              <TextInput type='password' />
+            </div>
+          </InputHalfWrapper>
+          <InputHalfWrapper>
+            <div>
+              <Label bold>Sua senha deve conter ao menos:</Label>
+              <PasswordWrapper>
+                <div>
+                  <PasswordItem>6 caracteres</PasswordItem>
+                  <PasswordItem>1 número</PasswordItem>
+                </div>
+                <div>
+                  <PasswordItem>1 letra maiúscula</PasswordItem>
+                  <PasswordItem>1 letra minúscula</PasswordItem>
+                </div>
+              </PasswordWrapper>
+            </div>
+          </InputHalfWrapper>
         </Form>
         <ButtonWrapper>
-          aaa
+          <Button cancel>
+            <Link href='/'>
+              Cancelar
+            </Link>
+          </Button>
+          <Button>
+            <Link href='/RegisterPersonalInfo'>
+              Próximo
+            </Link>
+          </Button>
         </ButtonWrapper>
       </FormWrapper>
     </Section>
