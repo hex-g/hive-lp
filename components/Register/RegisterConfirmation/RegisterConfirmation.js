@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import {
   Section,
@@ -16,11 +16,29 @@ import {
   FlavorText,
   Button,
   ConfirmationWrapper,
-  ConfirmationItem
+  ConfirmationItem,
+  ValuesLabel,
+  Values
 } from './RegisterConfirmation.style'
 import SvgMapping from '../../SvgMapping'
 
 const RegisterConfirmation = () => {
+
+  const [result, setResult] = useState({})
+
+  useEffect(() => {
+    setResult({
+      username: sessionStorage.getItem('username'),
+      email: sessionStorage.getItem('email'),
+      college: sessionStorage.getItem('college'),
+      password: sessionStorage.getItem('password'),
+      name: sessionStorage.getItem('name'),
+      lastName: sessionStorage.getItem('lastName'),
+      bornDate: sessionStorage.getItem('bornDate'),
+      cpf: sessionStorage.getItem('cpf')
+    })
+  }, [])
+
   return (
     <Section>
       <Sidebar>
@@ -67,12 +85,20 @@ const RegisterConfirmation = () => {
           </FlavorText>
           <ConfirmationWrapper>
             <ConfirmationItem>
-              <div>oi</div>
-              <div>tchau</div>
-            </ConfirmationItem>
-            <ConfirmationItem>
-              <div>oi</div>
-              <div>tchau</div>
+              <ValuesLabel>Usuário</ValuesLabel>
+              <Values>{result.username}</Values>
+              <ValuesLabel>Nome da instituição de ensino</ValuesLabel>
+              <Values>{result.college}</Values>
+              <ValuesLabel>Email</ValuesLabel>
+              <Values>{result.email}</Values>
+              <ValuesLabel>Senha</ValuesLabel>
+              <Values>{result.password}</Values>
+              <ValuesLabel>Nome e Sobrenome</ValuesLabel>
+              <Values>{`${result.name} ${result.lastName}`}</Values>
+              <ValuesLabel>Data de nascimento</ValuesLabel>
+              <Values>{result.bornDate}</Values>
+              <ValuesLabel>CPF</ValuesLabel>
+              <Values>{result.cpf}</Values>
             </ConfirmationItem>
           </ConfirmationWrapper>
         </Form>

@@ -73,21 +73,21 @@ const RegisterAccount = () => {
           <InputHalfWrapper>
             <div>
               <Label bold>Usuário*</Label>
-              <TextInput type='text' placeholder='Nome de Usuário' />
+              <TextInput type='text' placeholder='Nome de Usuário' onChange={(event) => sessionStorage.setItem('username', event.target.value)} />
             </div>
             <div>
               <Label bold>Email*</Label>
-              <TextInput type='text' placeholder='usuario@exemplo.com' />
+              <TextInput type='text' placeholder='usuario@exemplo.com' onChange={(event) => sessionStorage.setItem('email', event.target.value)} />
             </div>
           </InputHalfWrapper>
           <InputWrapper>
             <Label bold>Nome da instituição de ensino*</Label>
-            <BigTextInput type='text' placeholder='BandTec - Faculdade de Tecnologia Bandeirantes' />
+            <BigTextInput type='text' placeholder='BandTec - Faculdade de Tecnologia Bandeirantes' onChange={(event) => sessionStorage.setItem('college', event.target.value)} />
           </InputWrapper>
           <InputHalfWrapper>
             <div>
               <Label bold>Senha*</Label>
-              <TextInput type='password' />
+              <TextInput type='password' onChange={(event) => sessionStorage.setItem('password', event.target.value)} />
             </div>
             <div>
               <Label bold>Confirmação de senha*</Label>

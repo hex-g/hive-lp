@@ -100,13 +100,25 @@ export const Form = styled.form`
 `
 
 export const ConfirmationWrapper = styled.div`
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  justify-content: center;
 `
 
 export const ConfirmationItem = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+`
+
+export const ValuesLabel = styled.h4`
+  font-weight: bold;
+  font-size: ${props => props.theme.mediumText};
+  padding-bottom: 8px;
+`
+
+export const Values = styled.p`
+  padding-bottom: 16px;
 `
 
 export const ButtonWrapper = styled.div`

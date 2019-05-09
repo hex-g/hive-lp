@@ -73,21 +73,21 @@ const RegisterPersonalInfo = () => {
           <InputHalfWrapper>
             <div>
               <Label bold>Nome*</Label>
-              <TextInput type='text' placeholder='Daniela' />
+              <TextInput type='text' placeholder='Daniela' onChange={(event) => sessionStorage.setItem('name', event.target.value)} />
             </div>
             <div>
               <Label bold>Sobrenome*</Label>
-              <TextInput type='text' placeholder='Santos' />
+              <TextInput type='text' placeholder='Santos' onChange={(event) => sessionStorage.setItem('lastName', event.target.value)} />
             </div>
           </InputHalfWrapper>
           <InputHalfWrapper>
             <div>
               <Label bold>Data de nascimento*</Label>
-              <TextInput type='text' placeholder='DD/MM/AAAA' />
+              <TextInput type='text' placeholder='DD/MM/AAAA' onChange={(event) => sessionStorage.setItem('bornDate', event.target.value)} />
             </div>
             <div>
               <Label bold>CPF*</Label>
-              <TextInput type='text' />
+              <TextInput type='text' onChange={(event) => sessionStorage.setItem('cpf', event.target.value)} />
             </div>
           </InputHalfWrapper>
         </Form>
