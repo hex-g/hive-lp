@@ -53,6 +53,7 @@ export const ShowCase = styled.ul`
   position: relative;
   width: 100%;
   height: 500px;
+  overflow-x: hidden;
 `
 
 export const ShowCaseItem = styled.li`

@@ -13,7 +13,7 @@ import SvgMapping from '../SvgMapping'
 
 const SecondSection = () => {
   return (
-    <Section>
+    <Section id='about'>
       <Title>O que é a Hive ?</Title>
       <SquareContainer>
         <Square>

@@ -13,7 +13,7 @@ import Image from './monitor.png'
 
 const FirstSection = () => {
   return (
-    <Section>
+    <Section id='top'>
       <HexagonWrapper>
           <SvgMapping name="hexagon"/>
       </HexagonWrapper>

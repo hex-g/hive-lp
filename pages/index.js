@@ -11,10 +11,10 @@ const Index = () => {
   return (
     <Layout>
       <Header />
-      <FirstSection />
-      <SecondSection />
+      <FirstSection/>
+      <SecondSection/>
+      <ThirdSection/>
       <FourthSection />
-      <ThirdSection />
       <Footer />
     </Layout>
   )
