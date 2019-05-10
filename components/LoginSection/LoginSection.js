@@ -12,7 +12,17 @@ import {
 } from './LoginSection.style'
 import SvgMapping from '../SvgMapping'
 
-const LoginSection = () => {
+const SetUserData = () => {
+  const usernameField = document.querySelector('#usernameInput')
+  const passwordField = document.querySelector('#passwordInput')
+
+  const username = usernameField.value
+  const password = passwordField.value
+
+  return {username, password}
+}
+
+const LoginSection = (props) => {
   return (
     <Section>
       <LoginWrapper>
@@ -24,11 +34,11 @@ const LoginSection = () => {
           <Label>Dominio</Label>
           <TextInput type='text' />
           <Label>Usuário</Label>
-          <TextInput type='text' placeholder='Nome de Usuário' />
+          <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput"/>
           <Label>Senha</Label>
-          <TextInput type='password' placeholder='Senha' />
+          <TextInput type='password' placeholder='Senha' id="passwordInput" />
         </Form>
-        <Button>Entrar</Button>
+        <Button onClick={ () => props.OnButtonClick(SetUserData()) } >Entrar</Button>
         <Description>Ainda não possui uma conta? <span>Cadastre-se</span> agora mesmo! :)</Description>
       </LoginWrapper>
     </Section>
