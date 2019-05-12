@@ -13,6 +13,9 @@ export const LogoWrapper = styled.div`
   justify-content: flex-end;
   width: 100%;
   height: 100%;
+  tspan {
+    font-family: ${props => props.theme.primaryFont}, sans-serif;
+  }
 `
 
 export const Nav = styled.nav`
