@@ -61,7 +61,7 @@ const Login = () => {
   return (
     <Layout>
       <LoginMessage behavior={behavior}/>
-      <LoginSection onUsernameChange = {(value) => setUsername(value)} onPasswordChange = {(value) => setPassword(value)} lockFields = {behavior.type} onButtonClick = {handleGetUserTokenClick}/>
+      <LoginSection onUsernameChange = {setUsername} onPasswordChange = {setPassword} lockFields = {behavior.type} onButtonClick = {handleGetUserTokenClick}/>
     </Layout>
   )
 }
