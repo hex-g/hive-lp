@@ -20,10 +20,13 @@ const SetUserData = () => {
   const username = usernameField.value
   const password = passwordField.value
 
+  const message = document.querySelector('#messageWrapper')
+
   return {username, password}
 }
 
 const LoginSection = (props) => {
+  let lock = props.lockFields === 'loading' ? true : false
   return (
     <Section>
       <LoginWrapper>
@@ -37,11 +40,11 @@ const LoginSection = (props) => {
         <Title>Entre na <span>Hive</span> da sua instituição!</Title>
         <Form>
           <Label>Dominio</Label>
-          <TextInput type='text' />
+          <TextInput type='text' disabled={lock}/>
           <Label>Usuário</Label>
-          <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput"/>
+          <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput" disabled={lock}/>
           <Label>Senha</Label>
-          <TextInput type='password' placeholder='Senha' id="passwordInput" />
+          <TextInput type='password' placeholder='Senha' id="passwordInput" disabled={lock}/>
         </Form>
         <Button onClick={ () => props.OnButtonClick(SetUserData()) } >Entrar</Button>
         <Description>Ainda não possui uma conta? <span>Cadastre-se</span> agora mesmo! :)</Description>
