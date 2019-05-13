@@ -13,18 +13,6 @@ import {
 } from './LoginSection.style'
 import SvgMapping from '../SvgMapping'
 
-const SetUserData = () => {
-  const usernameField = document.querySelector('#usernameInput')
-  const passwordField = document.querySelector('#passwordInput')
-
-  const username = usernameField.value
-  const password = passwordField.value
-
-  const message = document.querySelector('#messageWrapper')
-
-  return {username, password}
-}
-
 const LoginSection = (props) => {
   let lock = props.lockFields === 'loading' ? true : false
   return (
@@ -42,11 +30,11 @@ const LoginSection = (props) => {
           {/* <Label>Dominio</Label>
           <TextInput type='text' disabled={lock}/> */}
           <Label>Usuário</Label>
-          <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput" disabled={lock}/>
+          <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput" onChange={(e) => props.onUsernameChange(e.target.value)} disabled={lock}/>
           <Label>Senha</Label>
-          <TextInput type='password' placeholder='Senha' id="passwordInput" disabled={lock}/>
+          <TextInput type='password' placeholder='Senha' id="passwordInput" onChange={(e) => props.onPasswordChange(e.target.value)} disabled={lock}/>
         </Form>
-        <Button onClick={ () => props.OnButtonClick(SetUserData()) } >Entrar</Button>
+        <Button onClick={ () => props.onButtonClick() } >Entrar</Button>
         <Description>
             Ainda não possui uma conta? <Link href='/RegisterAccount'> Cadastre-se </Link> agora mesmo! :)
         </Description>

@@ -12,9 +12,12 @@ const Login = () => {
     show: false,
     type: 'idling',
     message: ''
-  })
+  }) 
 
-  const handleGetUserTokenClick = async (username, password) => {
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleGetUserTokenClick = async () => {
     if(!username || !password){
       setBehavior(
         {
@@ -40,7 +43,7 @@ const Login = () => {
         {
           show: false,
           type: 'idling',
-          message: ''
+          message: 'Tudo certo!!!'
         }
       )
     }
@@ -58,7 +61,7 @@ const Login = () => {
   return (
     <Layout>
       <LoginMessage behavior={behavior}/>
-      <LoginSection lockFields = {behavior.type} OnButtonClick = {(userdata) => handleGetUserTokenClick(userdata.username, userdata.password) }/>
+      <LoginSection onUsernameChange = {(value) => setUsername(value)} onPasswordChange = {(value) => setPassword(value)} lockFields = {behavior.type} onButtonClick = {handleGetUserTokenClick}/>
     </Layout>
   )
 }
