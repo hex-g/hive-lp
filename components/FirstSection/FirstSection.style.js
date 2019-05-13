@@ -58,6 +58,11 @@ export const Button = styled.button`
     background-color: ${props => props.theme.hippieBlue};
     color: ${props => props.theme.wildSand};
   }
+
+  a{
+    color: inherit
+    text-decoration: none
+  }
 `
 
 export const ImageWrapper = styled.img`

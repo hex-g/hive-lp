@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { 
         Section, 
         MainText,
@@ -23,7 +24,11 @@ const FirstSection = () => {
           <span> produtividade acadêmica </span> 
           para o aluno e para o professor.
         </MainText>
-        <Button>Experimente a Hive</Button>
+        <Button>
+          <Link href='/RegisterAccount'>
+            <a>Experimente a Hive</a>
+          </Link>
+        </Button>
         <ImageWrapper src={Image} />
       </ContentWrapper>
     </Section>

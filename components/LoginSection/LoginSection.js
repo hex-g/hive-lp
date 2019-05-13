@@ -39,15 +39,17 @@ const LoginSection = (props) => {
         </Logo>
         <Title>Entre na <span>Hive</span> da sua instituição!</Title>
         <Form>
-          <Label>Dominio</Label>
-          <TextInput type='text' disabled={lock}/>
+          {/* <Label>Dominio</Label>
+          <TextInput type='text' disabled={lock}/> */}
           <Label>Usuário</Label>
           <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput" disabled={lock}/>
           <Label>Senha</Label>
           <TextInput type='password' placeholder='Senha' id="passwordInput" disabled={lock}/>
         </Form>
         <Button onClick={ () => props.OnButtonClick(SetUserData()) } >Entrar</Button>
-        <Description>Ainda não possui uma conta? <span>Cadastre-se</span> agora mesmo! :)</Description>
+        <Description>
+            Ainda não possui uma conta? <Link href='/RegisterAccount'> Cadastre-se </Link> agora mesmo! :)
+        </Description>
       </LoginWrapper>
     </Section>
   )

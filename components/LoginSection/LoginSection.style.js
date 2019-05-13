@@ -19,7 +19,7 @@ export const LoginWrapper = styled.div`
 
 export const Logo = styled.div`
   position: relative;
-  top: 10px;
+  top: 40px;
   tspan {
     font-family: ${props => props.theme.primaryFont}, sans-serif;
   }
@@ -28,6 +28,7 @@ export const Logo = styled.div`
 export const Title = styled.h2`
   font-family: ${props => props.theme.primaryFont}, sans-serif;
   font-size: ${props => props.theme.smallTitle};
+  margin-top: 24px;
   span{
     font-weight: bold;
     color: ${props => props.theme.rajah};
@@ -87,8 +88,9 @@ export const Description = styled.p`
   line-height: 1.3em;
   font-family: ${props => props.theme.secondaryFont}, sans-serif;
   font-size: ${props => props.theme.mediumText};
-  span {
+  a {
     font-weight: bold;
     color: ${props => props.theme.rajah};
+    text-decoration: none
   }
 `

@@ -20,7 +20,7 @@ const Login = () => {
         {
           show: true,
           type: 'error',
-          message: 'Preeencha todos os campos menos o domínio pq ele é inútil'
+          message: 'Ops... Parece que você não preencheu todos os campos'
         }
       )
       return
@@ -29,7 +29,7 @@ const Login = () => {
       {
         show: true,
         type: 'loading',
-        message: 'Carregando...mas vai dar erro pq o hirumito não tá aqui'
+        message: 'Só um minutinho, estamos processando...'
       }
     )
     try{
@@ -40,7 +40,7 @@ const Login = () => {
         {
           show: false,
           type: 'idling',
-          message: 'Sucesso!!!'
+          message: ''
         }
       )
     }
@@ -49,7 +49,7 @@ const Login = () => {
         {
           show: true,
           type: 'error',
-          message: 'Você errou... o login é "admin" e a Senha é "admin"'
+          message: 'Eita... algo deu errado. Você tem certeza que digitou tudo certinho?'
         }
       )
     }
