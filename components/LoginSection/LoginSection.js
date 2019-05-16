@@ -27,8 +27,6 @@ const LoginSection = (props) => {
         </Logo>
         <Title>Entre na <span>Hive</span> da sua instituição!</Title>
         <Form>
-          {/* <Label>Dominio</Label>
-          <TextInput type='text' disabled={lock}/> */}
           <Label>Usuário</Label>
           <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput" onChange={(e) => props.onUsernameChange(e.target.value)} disabled={lock}/>
           <Label>Senha</Label>
