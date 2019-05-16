@@ -37,7 +37,7 @@ const Header = () => {
         </NavList>
       </Nav>
       <NavButtonWrapper>
-        <Link href='/Login'>
+        <Link href='/Login/Login'>
           <a>Entrar</a>
         </Link>
         <Pipe></Pipe>
