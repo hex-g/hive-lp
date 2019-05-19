@@ -87,8 +87,9 @@ export const Description = styled.p`
   line-height: 1.3em;
   font-family: ${props => props.theme.secondaryFont}, sans-serif;
   font-size: ${props => props.theme.mediumText};
-  span {
+  a {
     font-weight: bold;
+    text-decoration: none;
     color: ${props => props.theme.rajah};
   }
 `

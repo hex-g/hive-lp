@@ -17,8 +17,13 @@ import {
   Button,
   ConfirmationWrapper,
   ConfirmationItem,
+  Username,
+  ValuesWrapper,
+  ValuesItem,
   ValuesLabel,
-  Values
+  Values,
+  Mugshot,
+  Bee
 } from './RegisterConfirmation.style'
 import SvgMapping from '../../SvgMapping'
 
@@ -85,20 +90,46 @@ const RegisterConfirmation = () => {
           </FlavorText>
           <ConfirmationWrapper>
             <ConfirmationItem>
-              <ValuesLabel>Usuário</ValuesLabel>
-              <Values>{result.username}</Values>
-              <ValuesLabel>Nome da instituição de ensino</ValuesLabel>
-              <Values>{result.college}</Values>
-              <ValuesLabel>Email</ValuesLabel>
-              <Values>{result.email}</Values>
-              <ValuesLabel>Senha</ValuesLabel>
-              <Values>{result.password}</Values>
-              <ValuesLabel>Nome e Sobrenome</ValuesLabel>
-              <Values>{`${result.name} ${result.lastName}`}</Values>
-              <ValuesLabel>Data de nascimento</ValuesLabel>
-              <Values>{result.bornDate}</Values>
-              <ValuesLabel>CPF</ValuesLabel>
-              <Values>{result.cpf}</Values>
+              <Mugshot>
+                <SvgMapping name='adminLogo' />
+                <Username>{`${result.name} ${result.lastName}`}</Username>
+                <p>Usuário Administrador</p>
+              </Mugshot>
+              <ValuesWrapper>
+                <ValuesItem single>
+                  <div>
+                    <ValuesLabel>Nome da instituição de ensino</ValuesLabel>
+                    <Values>{result.college}</Values>
+                  </div>
+                </ValuesItem>
+                <ValuesItem>
+                  <div>
+                    <ValuesLabel>Usuário</ValuesLabel>
+                    <Values>{result.username}</Values>
+                  </div>
+                  <div>
+                    <ValuesLabel>Email</ValuesLabel>
+                    <Values>{result.email}</Values>
+                  </div>
+                </ValuesItem>
+                <ValuesItem>
+                  <div>
+                    <ValuesLabel>CPF</ValuesLabel>
+                    <Values>{result.cpf}</Values>
+                  </div>
+                  <div>
+                    <ValuesLabel>Data de nascimento</ValuesLabel>
+                    <Values>{result.bornDate}</Values>
+                  </div>
+                </ValuesItem>
+                <ValuesItem>
+                  <div>
+                    <ValuesLabel>Senha</ValuesLabel>
+                    <Values>{result.password}</Values>
+                  </div>
+                </ValuesItem> 
+                <Bee>&#128029;</Bee>            
+              </ValuesWrapper>
             </ConfirmationItem>
           </ConfirmationWrapper>
         </Form>

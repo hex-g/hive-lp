@@ -20,6 +20,7 @@ import {
 
 import Image from './desktop.png'
 import Nest from '../../assets/nest.png'
+import Profile from '../../assets/profile.png'
 
 const ThirdSection = () => {
   const [show, setShow] = useState({
@@ -151,7 +152,7 @@ const ThirdSection = () => {
         </ShowCaseItem>
         <ShowCaseItem show={show.profile}>
           <ImageContainer right>
-            <ImageHive right src={Image} />
+            <ImageHive right src={Profile} />
           </ImageContainer>
           <ShowCaseDescription>
             <LineWrapper right up>

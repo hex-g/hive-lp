@@ -1,12 +1,12 @@
 import React from 'react'
 import { 
-        Section, 
-        MainText,
-        HexagonWrapper,
-        ContentWrapper,
-        Button,
-        ImageWrapper
-      } from './FirstSection.style'
+  Section, 
+  MainText,
+  HexagonWrapper,
+  ContentWrapper,
+  Button,
+  ImageWrapper
+} from './FirstSection.style'
 import SvgMapping from '../SvgMapping'
 
 import Image from './monitor.png'
@@ -15,7 +15,7 @@ const FirstSection = () => {
   return (
     <Section id='top'>
       <HexagonWrapper>
-          <SvgMapping name="hexagon"/>
+        <SvgMapping name="hexagon"/>
       </HexagonWrapper>
       <ContentWrapper>
         <MainText>

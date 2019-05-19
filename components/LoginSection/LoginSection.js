@@ -34,7 +34,13 @@ const LoginSection = () => {
           <TextInput type='password' placeholder='Senha' />
         </Form>
         <Button>Entrar</Button>
-        <Description>Ainda não possui uma conta? <span>Cadastre-se</span> agora mesmo! :)</Description>
+        <Description>
+          Ainda não possui uma conta?
+          <Link href='/RegisterAccount'>
+            <a> Cadastre-se </a>
+          </Link>
+          agora mesmo! :)
+        </Description>
       </LoginWrapper>
     </Section>
   )

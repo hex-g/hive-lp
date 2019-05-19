@@ -105,10 +105,42 @@ export const ConfirmationWrapper = styled.div`
 `
 
 export const ConfirmationItem = styled.div`
+  height: 60%;
+  width: 60%;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border: 1px solid ${props => props.theme.hippieBlue};
+  background-color: white;
+  border-radius: 6px;
+`
+
+export const Username = styled.p`
+  font-weight: bold;
+  padding-bottom: 16px;
+`
+
+export const Mugshot = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+
+  svg {
+    width: 100px;
+    height: 100px;
+  }
+`
+
+export const ValuesWrapper = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding-left: 24px;
+`
+
+export const ValuesItem = styled.div`
+  display: ${props => props.single ? 'flex' : 'grid'};
+  grid-template-columns: 1fr 1fr;
 `
 
 export const ValuesLabel = styled.h4`
@@ -119,6 +151,11 @@ export const ValuesLabel = styled.h4`
 
 export const Values = styled.p`
   padding-bottom: 16px;
+`
+
+export const Bee = styled.p`
+  text-align: right;
+  font-size: ${props => props.theme.largeText};
 `
 
 export const ButtonWrapper = styled.div`
