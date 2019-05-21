@@ -54,7 +54,6 @@ const RegisterConfirmation = () => {
   const handleRegister = async () => {
     const response = await saveUser(result)
     const status = response && response.status
-    console.log(status)
     switch (status) {
       case 200:
         setBehavior({
