@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { saveUser } from '../../../pages/Register/Register.service'
+import Message from '../../Message'
 import {
   Section,
   Sidebar,
@@ -53,18 +54,39 @@ const RegisterConfirmation = () => {
   const handleRegister = async () => {
     const response = await saveUser(result)
     const status = response && response.status
+    console.log(status)
     switch (status) {
       case 200:
-        console.log('Deu certo')
+        setBehavior({
+          show: true,
+          type: 'success',
+          message: 'Seu cadastro foi realizado com sucesso!'
+        })
+        setTimeout(function() {
+          window.location.href = "/"
+        }, 3000)
         break;
       case 404:
-        console.log('miou')
+        setBehavior({
+          show: true,
+          type: 'error',
+          message: 'Ops! Tivemos um erro inesperado. Estamos trabalhando nisso! :)'
+        })
         break;
       default:
-        console.log('Tamo trabalhando nisso aí, fi')
+        console.log('Estamos trabalhando nisso :)')
     }
   }
 
+  const hidePassword = () => {
+    let length = typeof result.password === 'undefined' ? 0 : result.password.length
+    let newPassword = ''
+    for (let i = 0; i < length; i++) {
+      newPassword += '•'
+    }
+    return newPassword
+  }
+  
   return (
     <Section>
       <Sidebar>
@@ -105,6 +127,7 @@ const RegisterConfirmation = () => {
         </ImageWrapper>
       </Sidebar>
       <FormWrapper>
+      <Message behavior={behavior}/>
         <Form>
           <FlavorText>
             Pronto! Confira se está tudo certinho.
@@ -146,7 +169,7 @@ const RegisterConfirmation = () => {
                 <ValuesItem>
                   <div>
                     <ValuesLabel>Senha</ValuesLabel>
-                    <Values>{result.password}</Values>
+                    <Values>{hidePassword()}</Values>
                   </div>
                 </ValuesItem> 
                 <Bee>&#128029;</Bee>            
@@ -161,7 +184,7 @@ const RegisterConfirmation = () => {
             </Link>
           </Button>
           <Button onClick={() => handleRegister()}>
-            <Link href='/'>
+            <Link>
               Finalizar
             </Link>
           </Button>

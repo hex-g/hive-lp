@@ -80,6 +80,7 @@ export const ImageWrapper = styled.div`
 `
 
 export const FormWrapper = styled.div`
+  position: relative;
   display: grid;
   grid-template-rows: 4fr 1fr;
   padding-top: 32px;

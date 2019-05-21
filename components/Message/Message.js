@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 
-import { MessageWrapper, MessageBox } from './LoginMessage.style'
+import { MessageWrapper, MessageBox } from './Message.style'
 
-const LoginMessage = ({ behavior }) => {
+const Message = ({ behavior }) => {
   return (
     <Fragment>
       <MessageWrapper behavior={behavior} id="messageWrapper">
@@ -14,4 +14,4 @@ const LoginMessage = ({ behavior }) => {
   )
 }
 
-export default LoginMessage
+export default Message

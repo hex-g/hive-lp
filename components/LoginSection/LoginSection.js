@@ -13,7 +13,8 @@ import {
 } from './LoginSection.style'
 import SvgMapping from '../SvgMapping'
 
-const LoginSection = () => {
+const LoginSection = (props) => {
+  let lock = props.lockFields === 'loading' ? true : false
   return (
     <Section>
       <LoginWrapper>
@@ -26,14 +27,12 @@ const LoginSection = () => {
         </Logo>
         <Title>Entre na <span>Hive</span> da sua instituição!</Title>
         <Form>
-          <Label>Dominio</Label>
-          <TextInput type='text' />
           <Label>Usuário</Label>
-          <TextInput type='text' placeholder='Nome de Usuário' />
+          <TextInput type='text' placeholder='Nome de Usuário' id="usernameInput" onChange={(e) => props.onUsernameChange(e.target.value)} disabled={lock}/>
           <Label>Senha</Label>
-          <TextInput type='password' placeholder='Senha' />
+          <TextInput type='password' placeholder='Senha' id="passwordInput" onChange={(e) => props.onPasswordChange(e.target.value)} disabled={lock}/>
         </Form>
-        <Button>Entrar</Button>
+        <Button onClick={ () => props.onButtonClick() } >Entrar</Button>
         <Description>
             Ainda não possui uma conta? <Link href='/Register/RegisterAccount'> Cadastre-se </Link> agora mesmo! :)
         </Description>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { 
   Section, 
   MainText,
@@ -7,7 +8,6 @@ import {
   Button,
   ImageWrapper
 } from './FirstSection.style'
-import Link from 'next/link'
 import SvgMapping from '../SvgMapping'
 
 import Image from './monitor.png'

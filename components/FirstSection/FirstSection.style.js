@@ -66,6 +66,11 @@ export const Button = styled.button`
     text-decoration: none;
     color: inherit;
   }
+
+  a{
+    color: inherit
+    text-decoration: none
+  }
 `
 
 export const ImageWrapper = styled.img`
