@@ -126,7 +126,7 @@ const RegisterConfirmation = () => {
         </ImageWrapper>
       </Sidebar>
       <FormWrapper>
-      <Message behavior={behavior}/>
+        <Message behavior={behavior}/>
         <Form>
           <FlavorText>
             Pronto! Confira se está tudo certinho.
