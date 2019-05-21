@@ -5,14 +5,14 @@ export const MessageWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 0;
-    width: 100vw
+    width: 100%;
     top: ${ props => props.behavior.show ? '0px' : '-56px' };
-    transition .3s ease-in;
+    transition: .3s ease-in;
     height: auto;
     z-index: 3;
-    transition-delay: ${props => props.behavior.type == 'idling' ? '.5s' : '0s'}
+    transition-delay: ${props => props.behavior.type == 'idling' ? '.5s' : '0s'};
 `
 
 export const MessageBox = styled.div`

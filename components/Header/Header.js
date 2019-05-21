@@ -41,7 +41,7 @@ const Header = () => {
           <a>Entrar</a>
         </Link>
         <Pipe></Pipe>
-        <Link href='/RegisterAccount'>
+        <Link href='/Register/RegisterAccount'>
           <a>Cadastre-se</a>
         </Link>
       </NavButtonWrapper>

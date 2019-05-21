@@ -90,6 +90,7 @@ export const Description = styled.p`
   font-size: ${props => props.theme.mediumText};
   a {
     font-weight: bold;
+    text-decoration: none;
     color: ${props => props.theme.rajah};
     text-decoration: none
   }

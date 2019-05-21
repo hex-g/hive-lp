@@ -27,7 +27,8 @@ export const HexagonWrapper = styled.div`
   margin-top: -150px;
   z-index: -1;
   padding: 0;
-  margin-left: calc(50% - 900px);
+  margin-left: calc(50% - 950px);
+  margin-top: -250px;
 `
 
 export const ContentWrapper = styled.div`
@@ -50,13 +51,20 @@ export const Button = styled.button`
   font-family: ${props => props.theme.primaryFont};
   font-size: 18px;
   font-weight: bold;
-  color: ${props => props.theme.hippieBlue};
+  color: ${props => props.theme.rajah};
   margin: 60px 20px;
+  transition: 0.2s ease-in;
   cursor: pointer;
 
-  &:hover{
-    background-color: ${props => props.theme.hippieBlue};
+  &:hover {
+    background-color: ${props => props.theme.rajah};
     color: ${props => props.theme.wildSand};
+    transition: 0.2s ease-out;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 
   a{

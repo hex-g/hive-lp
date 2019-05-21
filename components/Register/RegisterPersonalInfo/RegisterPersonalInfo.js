@@ -93,12 +93,12 @@ const RegisterPersonalInfo = () => {
         </Form>
         <ButtonWrapper>
           <Button cancel>
-            <Link href='/RegisterAccount'>
+            <Link href='/Register/RegisterAccount'>
               Voltar
             </Link>
           </Button>
           <Button>
-            <Link href='/RegisterConfirmation'>
+            <Link href='/Register/RegisterConfirmation'>
               Próximo
             </Link>
           </Button>

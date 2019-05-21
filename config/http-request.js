@@ -1,10 +1,5 @@
 import axios from 'axios'
 
-const HTTP_STATUS = {
-  UNAUTHORIZED: 401,
-  FORBIDDEN: 403,
-}
-
 export const request = ({
   url, ...options
 }) => axios({
@@ -28,7 +23,6 @@ const configInterceptorResponse = () => {
 
 const configInterceptorRequest = () => {
   axios.interceptors.request.use(config => {
-    //config.headers['Request-Id'] = uuid('request-id', uuid.DNS)
     return config
   })
   return axios

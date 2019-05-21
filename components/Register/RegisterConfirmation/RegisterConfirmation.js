@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { saveUser } from '../../../pages/Register/Register.service'
+import Message from '../../Message'
 import {
   Section,
   Sidebar,
@@ -17,14 +19,24 @@ import {
   Button,
   ConfirmationWrapper,
   ConfirmationItem,
+  Username,
+  ValuesWrapper,
+  ValuesItem,
   ValuesLabel,
-  Values
+  Values,
+  Mugshot,
+  Bee
 } from './RegisterConfirmation.style'
 import SvgMapping from '../../SvgMapping'
 
 const RegisterConfirmation = () => {
 
   const [result, setResult] = useState({})
+  const [behavior, setBehavior] = useState({
+    show: false,
+    type: 'idling',
+    message: ''
+  })
 
   useEffect(() => {
     setResult({
@@ -34,11 +46,46 @@ const RegisterConfirmation = () => {
       password: sessionStorage.getItem('password'),
       name: sessionStorage.getItem('name'),
       lastName: sessionStorage.getItem('lastName'),
-      bornDate: sessionStorage.getItem('bornDate'),
+      birthDate: sessionStorage.getItem('birthDate'),
       cpf: sessionStorage.getItem('cpf')
     })
   }, [])
 
+  const handleRegister = async () => {
+    const response = await saveUser(result)
+    const status = response && response.status
+    switch (status) {
+      case 200:
+        setBehavior({
+          show: true,
+          type: 'success',
+          message: 'Seu cadastro foi realizado com sucesso!'
+        })
+        setTimeout(function() {
+          window.location.href = "/"
+        }, 3000)
+        break;
+      case 404:
+        setBehavior({
+          show: true,
+          type: 'error',
+          message: 'Ops! Tivemos um erro inesperado. Estamos trabalhando nisso! :)'
+        })
+        break;
+      default:
+        console.log('Estamos trabalhando nisso :)')
+    }
+  }
+
+  const hidePassword = () => {
+    let length = typeof result.password === 'undefined' ? 0 : result.password.length
+    let newPassword = ''
+    for (let i = 0; i < length; i++) {
+      newPassword += '•'
+    }
+    return newPassword
+  }
+  
   return (
     <Section>
       <Sidebar>
@@ -79,37 +126,64 @@ const RegisterConfirmation = () => {
         </ImageWrapper>
       </Sidebar>
       <FormWrapper>
+        <Message behavior={behavior}/>
         <Form>
           <FlavorText>
             Pronto! Confira se está tudo certinho.
           </FlavorText>
           <ConfirmationWrapper>
             <ConfirmationItem>
-              <ValuesLabel>Usuário</ValuesLabel>
-              <Values>{result.username}</Values>
-              <ValuesLabel>Nome da instituição de ensino</ValuesLabel>
-              <Values>{result.college}</Values>
-              <ValuesLabel>Email</ValuesLabel>
-              <Values>{result.email}</Values>
-              <ValuesLabel>Senha</ValuesLabel>
-              <Values>{result.password}</Values>
-              <ValuesLabel>Nome e Sobrenome</ValuesLabel>
-              <Values>{`${result.name} ${result.lastName}`}</Values>
-              <ValuesLabel>Data de nascimento</ValuesLabel>
-              <Values>{result.bornDate}</Values>
-              <ValuesLabel>CPF</ValuesLabel>
-              <Values>{result.cpf}</Values>
+              <Mugshot>
+                <SvgMapping name='adminLogo' />
+                <Username>{`${result.name} ${result.lastName}`}</Username>
+                <p>Usuário Administrador</p>
+              </Mugshot>
+              <ValuesWrapper>
+                <ValuesItem single>
+                  <div>
+                    <ValuesLabel>Nome da instituição de ensino</ValuesLabel>
+                    <Values>{result.college}</Values>
+                  </div>
+                </ValuesItem>
+                <ValuesItem>
+                  <div>
+                    <ValuesLabel>Usuário</ValuesLabel>
+                    <Values>{result.username}</Values>
+                  </div>
+                  <div>
+                    <ValuesLabel>Email</ValuesLabel>
+                    <Values>{result.email}</Values>
+                  </div>
+                </ValuesItem>
+                <ValuesItem>
+                  <div>
+                    <ValuesLabel>CPF</ValuesLabel>
+                    <Values>{result.cpf}</Values>
+                  </div>
+                  <div>
+                    <ValuesLabel>Data de nascimento</ValuesLabel>
+                    <Values>{result.bornDate}</Values>
+                  </div>
+                </ValuesItem>
+                <ValuesItem>
+                  <div>
+                    <ValuesLabel>Senha</ValuesLabel>
+                    <Values>{hidePassword()}</Values>
+                  </div>
+                </ValuesItem> 
+                <Bee>&#128029;</Bee>            
+              </ValuesWrapper>
             </ConfirmationItem>
           </ConfirmationWrapper>
         </Form>
         <ButtonWrapper>
           <Button cancel>
-            <Link href='/RegisterPersonalInfo'>
+            <Link href='/Register/RegisterPersonalInfo'>
               Voltar
             </Link>
           </Button>
-          <Button>
-            <Link href='/'>
+          <Button onClick={() => handleRegister()}>
+            <Link>
               Finalizar
             </Link>
           </Button>

@@ -34,7 +34,7 @@ const LoginSection = (props) => {
         </Form>
         <Button onClick={ () => props.onButtonClick() } >Entrar</Button>
         <Description>
-            Ainda não possui uma conta? <Link href='/RegisterAccount'> Cadastre-se </Link> agora mesmo! :)
+            Ainda não possui uma conta? <Link href='/Register/RegisterAccount'> Cadastre-se </Link> agora mesmo! :)
         </Description>
       </LoginWrapper>
     </Section>

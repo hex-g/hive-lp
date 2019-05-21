@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from '../../components/Layout'
 import LoginSection from '../../components/LoginSection'
 import { getAccessToken } from './Login.service'
-import LoginMessage from '../../components/LoginSection/LoginMessage'
+import Message from '../../components/Message'
 
 
 
@@ -60,7 +60,7 @@ const Login = () => {
 
   return (
     <Layout>
-      <LoginMessage behavior={behavior}/>
+      <Message behavior={behavior}/>
       <LoginSection onUsernameChange = {setUsername} onPasswordChange = {setPassword} lockFields = {behavior.type} onButtonClick = {handleGetUserTokenClick}/>
     </Layout>
   )
