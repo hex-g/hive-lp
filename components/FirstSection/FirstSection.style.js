@@ -56,10 +56,15 @@ export const Button = styled.button`
   transition: 0.2s ease-in;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: ${props => props.theme.rajah};
     color: ${props => props.theme.wildSand};
     transition: 0.2s ease-out;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `
 

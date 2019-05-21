@@ -7,6 +7,7 @@ import {
   Button,
   ImageWrapper
 } from './FirstSection.style'
+import Link from 'next/link'
 import SvgMapping from '../SvgMapping'
 
 import Image from './monitor.png'
@@ -23,7 +24,11 @@ const FirstSection = () => {
           <span> produtividade acadêmica </span> 
           para o aluno e para o professor.
         </MainText>
-        <Button>Experimente a Hive</Button>
+        <Button>
+          <Link href='/Register/RegisterAccount'>
+            <a>Experimente a Hive</a>
+          </Link>
+        </Button>
         <ImageWrapper src={Image} />
       </ContentWrapper>
     </Section>

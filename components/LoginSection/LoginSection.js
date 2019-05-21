@@ -35,11 +35,7 @@ const LoginSection = () => {
         </Form>
         <Button>Entrar</Button>
         <Description>
-          Ainda não possui uma conta?
-          <Link href='/RegisterAccount'>
-            <a> Cadastre-se </a>
-          </Link>
-          agora mesmo! :)
+            Ainda não possui uma conta? <Link href='/Register/RegisterAccount'> Cadastre-se </Link> agora mesmo! :)
         </Description>
       </LoginWrapper>
     </Section>

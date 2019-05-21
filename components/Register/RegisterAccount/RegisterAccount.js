@@ -117,7 +117,7 @@ const RegisterAccount = () => {
             </Link>
           </Button>
           <Button>
-            <Link href='/RegisterPersonalInfo'>
+            <Link href='/Register/RegisterPersonalInfo'>
               Próximo
             </Link>
           </Button>

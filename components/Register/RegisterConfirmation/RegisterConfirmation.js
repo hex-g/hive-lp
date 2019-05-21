@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { saveUser } from '../../../pages/Register/Register.service'
 import {
   Section,
   Sidebar,
@@ -30,6 +31,11 @@ import SvgMapping from '../../SvgMapping'
 const RegisterConfirmation = () => {
 
   const [result, setResult] = useState({})
+  const [behavior, setBehavior] = useState({
+    show: false,
+    type: 'idling',
+    message: ''
+  })
 
   useEffect(() => {
     setResult({
@@ -39,10 +45,25 @@ const RegisterConfirmation = () => {
       password: sessionStorage.getItem('password'),
       name: sessionStorage.getItem('name'),
       lastName: sessionStorage.getItem('lastName'),
-      bornDate: sessionStorage.getItem('bornDate'),
+      birthDate: sessionStorage.getItem('birthDate'),
       cpf: sessionStorage.getItem('cpf')
     })
   }, [])
+
+  const handleRegister = async () => {
+    const response = await saveUser(result)
+    const status = response && response.status
+    switch (status) {
+      case 200:
+        console.log('Deu certo')
+        break;
+      case 404:
+        console.log('miou')
+        break;
+      default:
+        console.log('Tamo trabalhando nisso aí, fi')
+    }
+  }
 
   return (
     <Section>
@@ -135,11 +156,11 @@ const RegisterConfirmation = () => {
         </Form>
         <ButtonWrapper>
           <Button cancel>
-            <Link href='/RegisterPersonalInfo'>
+            <Link href='/Register/RegisterPersonalInfo'>
               Voltar
             </Link>
           </Button>
-          <Button>
+          <Button onClick={() => handleRegister()}>
             <Link href='/'>
               Finalizar
             </Link>
