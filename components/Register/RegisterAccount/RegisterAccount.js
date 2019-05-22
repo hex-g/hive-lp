@@ -26,6 +26,16 @@ import {
 import SvgMapping from '../../SvgMapping'
 
 const RegisterAccount = () => {
+
+
+//TODO
+const [color, setColor] = useState(false)
+
+const lowerCase = /[a-z]/;
+const upperCase = /[A-Z]/;
+const number = /[0-9]/;
+const specialCharacter = /[\,\.\!\@\#\$\%\^\&\*\(\)\_\+\-\=]+/
+
   return (
     <Section>
       <Sidebar>
@@ -113,12 +123,16 @@ const RegisterAccount = () => {
         <ButtonWrapper>
           <Button cancel>
             <Link href='/'>
-              Cancelar
+              <a>
+                Cancelar
+              </a>
             </Link>
           </Button>
           <Button>
             <Link href='/Register/RegisterPersonalInfo'>
-              Próximo
+              <a>
+                Próximo
+              </a>
             </Link>
           </Button>
         </ButtonWrapper>

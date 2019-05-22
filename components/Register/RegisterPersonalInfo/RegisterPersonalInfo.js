@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
+import MaskedInput from 'react-text-mask'
 import {
   Section,
   Sidebar,
@@ -83,11 +84,28 @@ const RegisterPersonalInfo = () => {
           <InputHalfWrapper>
             <div>
               <Label bold>Data de nascimento*</Label>
-              <TextInput type='text' placeholder='DD/MM/AAAA' onChange={(event) => sessionStorage.setItem('bornDate', event.target.value)} />
+              <MaskedInput
+                onChange={(event) => sessionStorage.setItem('birthDate', event.target.value)}
+                type='text'
+                placeholder='DD/MM/AAAA'
+                guide={false}
+                mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                render={(ref, props) => (
+                  <TextInput ref={ref} {...props} />
+                )}
+              />
             </div>
             <div>
               <Label bold>CPF*</Label>
-              <TextInput type='text' onChange={(event) => sessionStorage.setItem('cpf', event.target.value)} />
+              <MaskedInput
+                onChange={(event) => sessionStorage.setItem('cpf', event.target.value)}
+                type='text'
+                guide={false}
+                mask={[/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/]}
+                render={(ref, props) => (
+                  <TextInput ref={ref} {...props} />
+                )}
+              />
             </div>
           </InputHalfWrapper>
         </Form>

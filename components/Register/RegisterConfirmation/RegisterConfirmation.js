@@ -78,7 +78,8 @@ const RegisterConfirmation = () => {
   }
 
   const hidePassword = () => {
-    let length = typeof result.password === 'undefined' ? 0 : result.password.length
+    let length = result.password && result.password.length
+    console.log(typeof result.password)
     let newPassword = ''
     for (let i = 0; i < length; i++) {
       newPassword += '•'
@@ -162,7 +163,7 @@ const RegisterConfirmation = () => {
                   </div>
                   <div>
                     <ValuesLabel>Data de nascimento</ValuesLabel>
-                    <Values>{result.bornDate}</Values>
+                    <Values>{result.birthDate}</Values>
                   </div>
                 </ValuesItem>
                 <ValuesItem>
@@ -179,12 +180,16 @@ const RegisterConfirmation = () => {
         <ButtonWrapper>
           <Button cancel>
             <Link href='/Register/RegisterPersonalInfo'>
-              Voltar
+              <a>
+                Voltar
+              </a>
             </Link>
           </Button>
           <Button onClick={() => handleRegister()}>
-            <Link>
-              Finalizar
+            <Link href=''>
+              <a>
+                Finalizar
+              </a>
             </Link>
           </Button>
         </ButtonWrapper>
