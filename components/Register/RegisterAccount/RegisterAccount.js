@@ -27,14 +27,35 @@ import SvgMapping from '../../SvgMapping'
 
 const RegisterAccount = () => {
 
+const [colorMinLength, setColorMinLength] = useState(false)
+const [colorLowerCase, setColorLowerCase] = useState(false)
+const [colorUpperCase, setColorUpperCase] = useState(false)
+const [colorNumber, setColorNumber] = useState(false)
 
-//TODO
-const [color, setColor] = useState(false)
+const lowerCase = /[a-z]/
+const upperCase = /[A-Z]/
+const number = /[0-9]/
 
-const lowerCase = /[a-z]/;
-const upperCase = /[A-Z]/;
-const number = /[0-9]/;
-const specialCharacter = /[\,\.\!\@\#\$\%\^\&\*\(\)\_\+\-\=]+/
+const hasMinLength = (value, minLength) => value.length > minLength
+const hasLowerCase = (value) => lowerCase.test(value)
+const hasUpperCase = (value) => upperCase.test(value)
+const hasNumber = (value) => number.test(value)
+
+if (typeof window !== 'undefined') {
+  const passwordInput = document.getElementById('passwordInput').value
+  const submitButton = document.getElementById('submitButton')
+}
+
+const checkPassword = () => {
+
+  const isEnabled = () =>
+    hasMinLength(passwordInput, 6) &&
+    hasUpperCase(passwordInput) &&
+    hasLowerCase(passwordInput) &&
+    hasNumber(passwordInput)
+  
+  isEnabled() ? submitButton.disabled = false : submitButton.disabled = true
+}
 
   return (
     <Section>
@@ -97,7 +118,17 @@ const specialCharacter = /[\,\.\!\@\#\$\%\^\&\*\(\)\_\+\-\=]+/
           <InputHalfWrapper>
             <div>
               <Label bold>Senha*</Label>
-              <TextInput type='password' onChange={(event) => sessionStorage.setItem('password', event.target.value)} />
+              <TextInput
+                id='passwordInput'
+                type='password'
+                onChange={(event) => {
+                  checkPassword()
+                  hasLowerCase() && setColorLowerCase('color')
+                  hasUpperCase() && setColorUpperCase('color')
+                  hasNumber() && setColorNumber('color')
+                  sessionStorage.setItem('password', event.target.value)
+                }} 
+              />
             </div>
             <div>
               <Label bold>Confirmação de senha*</Label>
@@ -109,12 +140,12 @@ const specialCharacter = /[\,\.\!\@\#\$\%\^\&\*\(\)\_\+\-\=]+/
               <Label bold>Sua senha deve conter ao menos:</Label>
               <PasswordWrapper>
                 <div>
-                  <PasswordItem>6 caracteres</PasswordItem>
-                  <PasswordItem>1 número</PasswordItem>
+                  <PasswordItem color={colorMinLength}>6 caracteres</PasswordItem>
+                  <PasswordItem color={colorNumber}>1 número</PasswordItem>
                 </div>
                 <div>
-                  <PasswordItem>1 letra maiúscula</PasswordItem>
-                  <PasswordItem>1 letra minúscula</PasswordItem>
+                  <PasswordItem color={colorUpperCase}>1 letra maiúscula</PasswordItem>
+                  <PasswordItem color={colorLowerCase}>1 letra minúscula</PasswordItem>
                 </div>
               </PasswordWrapper>
             </div>
@@ -128,7 +159,7 @@ const specialCharacter = /[\,\.\!\@\#\$\%\^\&\*\(\)\_\+\-\=]+/
               </a>
             </Link>
           </Button>
-          <Button>
+          <Button id='submitButton' disabled='disabled'>
             <Link href='/Register/RegisterPersonalInfo'>
               <a>
                 Próximo

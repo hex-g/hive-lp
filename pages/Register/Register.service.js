@@ -6,6 +6,6 @@ export const saveUser = async (userInfo) => {
       method: 'put',
       data: {
         ...userInfo
-      },
+      }
     })
   }

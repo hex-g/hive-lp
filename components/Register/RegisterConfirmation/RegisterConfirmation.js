@@ -52,34 +52,29 @@ const RegisterConfirmation = () => {
   }, [])
 
   const handleRegister = async () => {
-    const response = await saveUser(result)
-    const status = response && response.status
-    switch (status) {
-      case 200:
-        setBehavior({
-          show: true,
-          type: 'success',
-          message: 'Seu cadastro foi realizado com sucesso!'
-        })
-        setTimeout(function() {
-          window.location.href = "/"
-        }, 3000)
-        break;
-      case 404:
-        setBehavior({
-          show: true,
-          type: 'error',
-          message: 'Ops! Tivemos um erro inesperado. Estamos trabalhando nisso! :)'
-        })
-        break;
-      default:
-        console.log('Estamos trabalhando nisso :)')
+
+    try {
+      const response = await saveUser(result)
+      response && response.status === 200 &&
+      setBehavior({
+        show: true,
+        type: 'success',
+        message: 'Seu cadastro foi realizado com sucesso!'
+      })
+      setTimeout(function() {
+        window.location.href = "/"
+      }, 3000)
+    } catch(e) {
+      setBehavior({
+        show: true,
+        type: 'error',
+        message: 'Ops! Tivemos um erro inesperado. Estamos trabalhando nisso! :)'
+      })
     }
   }
 
   const hidePassword = () => {
     let length = result.password && result.password.length
-    console.log(typeof result.password)
     let newPassword = ''
     for (let i = 0; i < length; i++) {
       newPassword += '•'

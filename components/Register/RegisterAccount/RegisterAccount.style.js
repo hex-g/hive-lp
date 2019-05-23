@@ -148,7 +148,7 @@ export const PasswordWrapper = styled.div`
 export const PasswordItem = styled.p`
   font-size: ${props => props.theme.smallText};
   padding: 4px 0;
-  color: ${props => props.theme.placeholderOuterSpace};
+  color: ${props => props.color ? 'red' : props.theme.placeholderOuterSpace};
 `
 
 export const Button = styled.button`
@@ -167,5 +167,9 @@ export const Button = styled.button`
   a {
     color: ${props => props.cancel ? props.theme.hippieBlue : props.theme.wildSand};
     text-decoration: none;
+  }
+
+  &:disabled {
+    background-color: ${props => props.cancel ? 'white' : props.theme.wildSand};
   }
 `
