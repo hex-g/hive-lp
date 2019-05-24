@@ -27,35 +27,50 @@ import SvgMapping from '../../SvgMapping'
 
 const RegisterAccount = () => {
 
-const [colorMinLength, setColorMinLength] = useState(false)
-const [colorLowerCase, setColorLowerCase] = useState(false)
-const [colorUpperCase, setColorUpperCase] = useState(false)
-const [colorNumber, setColorNumber] = useState(false)
+  const [passwordValue, setPasswordValue] = useState('')
+  const [colorMinLength, setColorMinLength] = useState(false)
+  const [colorLowerCase, setColorLowerCase] = useState(false)
+  const [colorUpperCase, setColorUpperCase] = useState(false)
+  const [colorNumber, setColorNumber] = useState(false)
+  const [disableSubmit, setDisableSubmit] = useState(true)
+  const [confirmed, setConfirmed] = useState(false)
 
-const lowerCase = /[a-z]/
-const upperCase = /[A-Z]/
-const number = /[0-9]/
+  const lowerCase = /[a-z]/
+  const upperCase = /[A-Z]/
+  const number = /[0-9]/
 
-const hasMinLength = (value, minLength) => value.length > minLength
-const hasLowerCase = (value) => lowerCase.test(value)
-const hasUpperCase = (value) => upperCase.test(value)
-const hasNumber = (value) => number.test(value)
+  const hasMinLength = (value, minLength) => value.length > minLength
+  const hasLowerCase = (value) => lowerCase.test(value)
+  const hasUpperCase = (value) => upperCase.test(value)
+  const hasNumber = (value) => number.test(value)
 
-if (typeof window !== 'undefined') {
-  const passwordInput = document.getElementById('passwordInput').value
-  const submitButton = document.getElementById('submitButton')
-}
+  const checkPassword = (event) => {
+    const value = event.target.value
+    setPasswordValue(value)
+    const submitButton = document.getElementById('submitButton')
 
-const checkPassword = () => {
+    setColorMinLength(hasMinLength(value, 6)) 
+    setColorUpperCase(hasUpperCase(value))
+    setColorLowerCase(hasLowerCase(value))
+    setColorNumber(hasNumber(value))
 
-  const isEnabled = () =>
-    hasMinLength(passwordInput, 6) &&
-    hasUpperCase(passwordInput) &&
-    hasLowerCase(passwordInput) &&
-    hasNumber(passwordInput)
-  
-  isEnabled() ? submitButton.disabled = false : submitButton.disabled = true
-}
+    const isEnabled = () =>
+      hasMinLength(value, 6) && 
+      hasUpperCase(value) &&
+      hasLowerCase(value) &&
+      hasNumber(value)
+
+    isEnabled() ? setConfirmed(true) : setConfirmed(false)
+    
+  }
+
+  const checkConfirmation = (event) =>
+    confirmed &&
+    event.target.value === sessionStorage.getItem('password') ?
+    setDisableSubmit(false) :
+    setDisableSubmit(true)
+
+  const redirect = () => window.location.href = "/Register/RegisterPersonalInfo"
 
   return (
     <Section>
@@ -79,7 +94,7 @@ const checkPassword = () => {
             <StepItem>
               <Link href='#'>
                 <a>
-                  <SvgMapping name='unfillRegisterHexagonGroup'/>
+                  <SvgMapping name='unfillRegisterHexagonGroup' />
                 </a>
               </Link>
             </StepItem>
@@ -119,20 +134,21 @@ const checkPassword = () => {
             <div>
               <Label bold>Senha*</Label>
               <TextInput
-                id='passwordInput'
                 type='password'
                 onChange={(event) => {
-                  checkPassword()
-                  hasLowerCase() && setColorLowerCase('color')
-                  hasUpperCase() && setColorUpperCase('color')
-                  hasNumber() && setColorNumber('color')
-                  sessionStorage.setItem('password', event.target.value)
-                }} 
+                checkPassword(event)
+                sessionStorage.setItem('password', event.target.value)
+                }}
               />
             </div>
             <div>
               <Label bold>Confirmação de senha*</Label>
-              <TextInput type='password' />
+              <TextInput
+                type='password'
+                onChange={(event) => {
+                  checkConfirmation(event)
+                }}
+              />
             </div>
           </InputHalfWrapper>
           <InputHalfWrapper>
@@ -159,12 +175,11 @@ const checkPassword = () => {
               </a>
             </Link>
           </Button>
-          <Button id='submitButton' disabled='disabled'>
-            <Link href='/Register/RegisterPersonalInfo'>
-              <a>
-                Próximo
-              </a>
-            </Link>
+          <Button
+            onClick={() => redirect()}
+            disabled={disableSubmit}
+          >
+            Próximo
           </Button>
         </ButtonWrapper>
       </FormWrapper>
