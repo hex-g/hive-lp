@@ -26,6 +26,52 @@ import {
 import SvgMapping from '../../SvgMapping'
 
 const RegisterAccount = () => {
+
+  const [passwordValue, setPasswordValue] = useState('')
+  const [colorMinLength, setColorMinLength] = useState(false)
+  const [colorLowerCase, setColorLowerCase] = useState(false)
+  const [colorUpperCase, setColorUpperCase] = useState(false)
+  const [colorNumber, setColorNumber] = useState(false)
+  const [disableSubmit, setDisableSubmit] = useState(true)
+  const [confirmed, setConfirmed] = useState(false)
+
+  const lowerCase = /[a-z]/
+  const upperCase = /[A-Z]/
+  const number = /[0-9]/
+
+  const hasMinLength = (value, minLength) => value.length > minLength
+  const hasLowerCase = (value) => lowerCase.test(value)
+  const hasUpperCase = (value) => upperCase.test(value)
+  const hasNumber = (value) => number.test(value)
+
+  const checkPassword = (event) => {
+    const value = event.target.value
+    setPasswordValue(value)
+    const submitButton = document.getElementById('submitButton')
+
+    setColorMinLength(hasMinLength(value, 6)) 
+    setColorUpperCase(hasUpperCase(value))
+    setColorLowerCase(hasLowerCase(value))
+    setColorNumber(hasNumber(value))
+
+    const isEnabled = () =>
+      hasMinLength(value, 6) && 
+      hasUpperCase(value) &&
+      hasLowerCase(value) &&
+      hasNumber(value)
+
+    isEnabled() ? setConfirmed(true) : setConfirmed(false)
+    
+  }
+
+  const checkConfirmation = (event) =>
+    confirmed &&
+    event.target.value === sessionStorage.getItem('password') ?
+    setDisableSubmit(false) :
+    setDisableSubmit(true)
+
+  const redirect = () => window.location.href = "/Register/RegisterPersonalInfo"
+
   return (
     <Section>
       <Sidebar>
@@ -48,7 +94,7 @@ const RegisterAccount = () => {
             <StepItem>
               <Link href='#'>
                 <a>
-                  <SvgMapping name='unfillRegisterHexagonGroup'/>
+                  <SvgMapping name='unfillRegisterHexagonGroup' />
                 </a>
               </Link>
             </StepItem>
@@ -87,11 +133,22 @@ const RegisterAccount = () => {
           <InputHalfWrapper>
             <div>
               <Label bold>Senha*</Label>
-              <TextInput type='password' onChange={(event) => sessionStorage.setItem('password', event.target.value)} />
+              <TextInput
+                type='password'
+                onChange={(event) => {
+                checkPassword(event)
+                sessionStorage.setItem('password', event.target.value)
+                }}
+              />
             </div>
             <div>
               <Label bold>Confirmação de senha*</Label>
-              <TextInput type='password' />
+              <TextInput
+                type='password'
+                onChange={(event) => {
+                  checkConfirmation(event)
+                }}
+              />
             </div>
           </InputHalfWrapper>
           <InputHalfWrapper>
@@ -99,12 +156,12 @@ const RegisterAccount = () => {
               <Label bold>Sua senha deve conter ao menos:</Label>
               <PasswordWrapper>
                 <div>
-                  <PasswordItem>6 caracteres</PasswordItem>
-                  <PasswordItem>1 número</PasswordItem>
+                  <PasswordItem color={colorMinLength}>6 caracteres</PasswordItem>
+                  <PasswordItem color={colorNumber}>1 número</PasswordItem>
                 </div>
                 <div>
-                  <PasswordItem>1 letra maiúscula</PasswordItem>
-                  <PasswordItem>1 letra minúscula</PasswordItem>
+                  <PasswordItem color={colorUpperCase}>1 letra maiúscula</PasswordItem>
+                  <PasswordItem color={colorLowerCase}>1 letra minúscula</PasswordItem>
                 </div>
               </PasswordWrapper>
             </div>
@@ -113,13 +170,16 @@ const RegisterAccount = () => {
         <ButtonWrapper>
           <Button cancel>
             <Link href='/'>
-              Cancelar
+              <a>
+                Cancelar
+              </a>
             </Link>
           </Button>
-          <Button>
-            <Link href='/Register/RegisterPersonalInfo'>
-              Próximo
-            </Link>
+          <Button
+            onClick={() => redirect()}
+            disabled={disableSubmit}
+          >
+            Próximo
           </Button>
         </ButtonWrapper>
       </FormWrapper>

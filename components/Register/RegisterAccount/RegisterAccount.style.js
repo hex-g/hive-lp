@@ -148,7 +148,8 @@ export const PasswordWrapper = styled.div`
 export const PasswordItem = styled.p`
   font-size: ${props => props.theme.smallText};
   padding: 4px 0;
-  color: ${props => props.theme.placeholderOuterSpace};
+  font-weight: bold;
+  color: ${props => props.color ? props.theme.hippieBlue : props.theme.placeholderOuterSpace};
 `
 
 export const Button = styled.button`
@@ -167,5 +168,10 @@ export const Button = styled.button`
   a {
     color: ${props => props.cancel ? props.theme.hippieBlue : props.theme.wildSand};
     text-decoration: none;
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: ${props => props.cancel ? 'white' : props.theme.hoverHippieBlue};
   }
 `

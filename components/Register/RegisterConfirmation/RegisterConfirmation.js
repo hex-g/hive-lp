@@ -52,33 +52,29 @@ const RegisterConfirmation = () => {
   }, [])
 
   const handleRegister = async () => {
-    const response = await saveUser(result)
-    const status = response && response.status
-    switch (status) {
-      case 200:
-        setBehavior({
-          show: true,
-          type: 'success',
-          message: 'Seu cadastro foi realizado com sucesso!'
-        })
-        setTimeout(function() {
-          window.location.href = "/"
-        }, 3000)
-        break;
-      case 404:
-        setBehavior({
-          show: true,
-          type: 'error',
-          message: 'Ops! Tivemos um erro inesperado. Estamos trabalhando nisso! :)'
-        })
-        break;
-      default:
-        console.log('Estamos trabalhando nisso :)')
+
+    try {
+      const response = await saveUser(result)
+      response && response.status === 200 &&
+      setBehavior({
+        show: true,
+        type: 'success',
+        message: 'Seu cadastro foi realizado com sucesso!'
+      })
+      setTimeout(function() {
+        window.location.href = "/"
+      }, 3000)
+    } catch(e) {
+      setBehavior({
+        show: true,
+        type: 'error',
+        message: 'Ops! Tivemos um erro inesperado. Estamos trabalhando nisso! :)'
+      })
     }
   }
 
   const hidePassword = () => {
-    let length = typeof result.password === 'undefined' ? 0 : result.password.length
+    let length = result.password && result.password.length
     let newPassword = ''
     for (let i = 0; i < length; i++) {
       newPassword += '•'
@@ -162,7 +158,7 @@ const RegisterConfirmation = () => {
                   </div>
                   <div>
                     <ValuesLabel>Data de nascimento</ValuesLabel>
-                    <Values>{result.bornDate}</Values>
+                    <Values>{result.birthDate}</Values>
                   </div>
                 </ValuesItem>
                 <ValuesItem>
@@ -179,12 +175,16 @@ const RegisterConfirmation = () => {
         <ButtonWrapper>
           <Button cancel>
             <Link href='/Register/RegisterPersonalInfo'>
-              Voltar
+              <a>
+                Voltar
+              </a>
             </Link>
           </Button>
           <Button onClick={() => handleRegister()}>
-            <Link>
-              Finalizar
+            <Link href=''>
+              <a>
+                Finalizar
+              </a>
             </Link>
           </Button>
         </ButtonWrapper>
