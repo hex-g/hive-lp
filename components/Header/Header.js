@@ -37,11 +37,11 @@ const Header = () => {
         </NavList>
       </Nav>
       <NavButtonWrapper>
-        <Link href='/Login/Login'>
+        <Link href='/Login'>
           <a>Entrar</a>
         </Link>
         <Pipe></Pipe>
-        <Link href='/Register/RegisterAccount'>
+        <Link href='/RegisterAccount'>
           <a>Cadastre-se</a>
         </Link>
       </NavButtonWrapper>

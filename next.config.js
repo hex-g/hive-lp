@@ -8,9 +8,9 @@ module.exports = withImages({
     return {
       '/': { page: '/' },
       '/Login': { page: '/Login/Login' },
-      '/Register': { page: '/Register/RegisterAccount' },
-      '/Register': { page: '/Register/RegisterPersonalInfo' },
-      '/Register': { page: '/Register/RegisterConfirmation' }
+      '/RegisterAccount': { page: '/Register/RegisterAccount' },
+      '/RegisterPersonalInfo': { page: '/Register/RegisterPersonalInfo' },
+      '/RegisterConfirmation': { page: '/Register/RegisterConfirmation' }
     }
   }
 })

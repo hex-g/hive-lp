@@ -70,7 +70,7 @@ const RegisterAccount = () => {
     setDisableSubmit(false) :
     setDisableSubmit(true)
 
-  const redirect = () => window.location.href = "/Register/RegisterPersonalInfo"
+  const redirect = () => window.location.href = "/RegisterPersonalInfo"
 
   return (
     <Section>

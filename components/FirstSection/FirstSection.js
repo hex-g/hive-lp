@@ -25,7 +25,7 @@ const FirstSection = () => {
           para o aluno e para o professor.
         </MainText>
         <Button>
-          <Link href='/Register/RegisterAccount'>
+          <Link href='/RegisterAccount'>
             <a>Experimente a Hive</a>
           </Link>
         </Button>
