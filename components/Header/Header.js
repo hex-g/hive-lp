@@ -37,7 +37,7 @@ const Header = () => {
         </NavList>
       </Nav>
       <NavButtonWrapper>
-        <Link href='/Login'>
+        <Link href='https://hive-app.netlify.com'>
           <a>Entrar</a>
         </Link>
         <Pipe></Pipe>
