@@ -81,6 +81,8 @@ const RegisterConfirmation = () => {
     }
     return newPassword
   }
+
+  let link = ''
   
   return (
     <Section>
@@ -180,12 +182,20 @@ const RegisterConfirmation = () => {
               </a>
             </Link>
           </Button>
-          <Button onClick={() => handleRegister()}>
-            <Link href=''>
-              <a>
-                Finalizar
-              </a>
-            </Link>
+          <Button onClick={() => {
+            handleRegister()
+            setBehavior({
+              show: true,
+              type: 'success',
+              message: 'Seu cadastro foi realizado com sucesso!'
+            })
+            setTimeout(() => {
+              window.location.href = 'https://hive-app.netlify.com'
+            }, 3000);
+            }}>
+            <a>
+              Finalizar
+            </a>
           </Button>
         </ButtonWrapper>
       </FormWrapper>
