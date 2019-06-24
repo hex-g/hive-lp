@@ -21,12 +21,14 @@ import {
 import Image from './desktop.png'
 import Nest from '../../assets/nest.png'
 import Profile from '../../assets/profile.png'
+import Editor from '../../assets/editor.png'
+import Subjects from '../../assets/disciplinas.png'
 
 const ThirdSection = () => {
   const [show, setShow] = useState({
     nest: true,
-    hiveShare: false,
-    hiveCentral: false,
+    editor: false,
+    subjects: false,
     profile: false
   })
 
@@ -40,8 +42,8 @@ const ThirdSection = () => {
               onClick={() =>
                 setShow({
                   nest: true,
-                  hiveShare: false,
-                  hiveCentral: false,
+                  editor: false,
+                  subjects: false,
                   profile: false
                 })}
             >
@@ -49,31 +51,31 @@ const ThirdSection = () => {
             </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem show={show.hiveShare}>
+          <NavigationItem show={show.editor}>
             <button 
               onClick={() =>
                 setShow({
                   nest: false,
-                  hiveShare: true,
-                  hiveCentral: false,
+                  editor: true,
+                  subjects: false,
                   profile: false
                 })}
             >
-              HiveShare
+              Editor
             </button>
           </NavigationItem>
           <Pipe />
-          <NavigationItem show={show.hiveCentral}>
+          <NavigationItem show={show.subjects}>
             <button 
               onClick={() =>
                 setShow({
                   nest: false,
-                  hiveShare: false,
-                  hiveCentral: true,
+                  editor: false,
+                  subjects: true,
                   profile: false
                 })}
             >
-              HiveCentral
+              Disciplinas
             </button>
           </NavigationItem>
           <Pipe />
@@ -112,9 +114,9 @@ const ThirdSection = () => {
             <Description>Mantém o aluno e o professor em alerta sobre materiais compartilhados</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
-        <ShowCaseItem show={show.hiveShare}>
+        <ShowCaseItem show={show.editor}>
           <ImageContainer right>
-            <ImageHive right src={Image} />
+            <ImageHive right src={Editor} />
           </ImageContainer>
           <ShowCaseDescription>
             <LineWrapper up right>
@@ -128,12 +130,12 @@ const ThirdSection = () => {
               <LineHorizontal />
               <LineVertical />
             </LineWrapper>
-            <Description right>Assuntos separados por tags personalizáveis</Description>
+            <Description right>Organização com sistema de árvores para melhor segmentação no momento de compartilhar</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
-        <ShowCaseItem show={show.hiveCentral}>
+        <ShowCaseItem show={show.subjects}>
           <ImageContainer>
-            <ImageHive src={Image} />
+            <ImageHive src={Subjects} />
           </ImageContainer>
           <ShowCaseDescription>
             <LineWrapper up>
@@ -141,13 +143,13 @@ const ThirdSection = () => {
               <LineHorizontal up />
               <LineVertical up />
             </LineWrapper>
-            <Description up>Suporte completo ao Markdown com separação de blocos de anotações</Description>
+            <Description up>Tarefas organizadas de acordo com as entregas pedidas</Description>
             <LineWrapper>
               <LineDiagonal />
               <LineHorizontal />
               <LineVertical />
             </LineWrapper>
-            <Description>Armazenamento e compartilhamento dentro da própria plataforma</Description>
+            <Description>Downloads e uploads de arquivos demandados pelo corpo docente</Description>
           </ShowCaseDescription>
         </ShowCaseItem>
         <ShowCaseItem show={show.profile}>
