@@ -80,6 +80,6 @@ export const ImageWrapper = styled.img`
   height: 300px;
   float: right;
   position: absolute;
-  padding: 0 80px;
+  padding-left: 80px;
   top: 0;
 `
