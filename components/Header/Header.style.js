@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 
-export const HeaderHolder = styled.header`
+export const HeaderWrapper = styled.header`
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+`
+
+export const HeaderHolder = styled.div`
+  width: 1440px;
   display: grid;
   grid-template-columns: 20% 50% 20%;
   padding: 20px;
@@ -38,6 +45,7 @@ export const NavItem = styled.li`
 
   &:first-child  {
     a {
+      color: #fff;
       &:hover {
         color: ${props => props.theme.rajah};
       }
@@ -48,6 +56,7 @@ export const NavItem = styled.li`
     text-decoration: none;
     color: ${props => props.theme.outerSpace};
     transition: 0.2s ease-out;
+    cursor: pointer;
 
     &:hover {
       transition: 0.2s ease-in;

@@ -18,6 +18,8 @@ import {
   LineDiagonal,
 } from './ThirdSection.style'
 
+import BackHexagon from '../BackHexagon'
+
 import Image from './desktop.png'
 import Nest from '../../assets/nest.png'
 import Profile from '../../assets/profile.png'
@@ -34,6 +36,7 @@ const ThirdSection = () => {
 
   return (
     <Section id='tools'>
+      <BackHexagon side="left" show="half" scale='.85' transparent={true}/>
       <NavigationBar>
         <NavigationTitle>Editor sem complicações</NavigationTitle>
         <NavigationList>

@@ -4,7 +4,6 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${props => props.theme.wildSand};
   margin-top: 100px;
 `
 
@@ -52,7 +51,7 @@ export const ShowCase = styled.ul`
   justify-content: center;
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 450px;
   overflow-x: hidden;
 `
 

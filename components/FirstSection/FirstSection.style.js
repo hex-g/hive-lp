@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-  min-height: auto;
+  min-height: 570px;
   height: auto;
   background-color: ${props => props.theme.athensGray};
+  display: flex;
+  justify-content: center;
 `
 
 export const MainText = styled.div `
@@ -23,12 +25,12 @@ export const MainText = styled.div `
 `
 
 export const HexagonWrapper = styled.div`
-  position: relative;
-  margin-top: -150px;
+  position: absolute;
+  top:-150px;
+  left: 0;
+  height: 1000px;
+  width: 100%;
   z-index: -1;
-  padding: 0;
-  margin-left: calc(50% - 950px);
-  margin-top: -250px;
 `
 
 export const ContentWrapper = styled.div`
@@ -68,8 +70,8 @@ export const Button = styled.button`
   }
 
   a{
-    color: inherit
-    text-decoration: none
+    color: inherit;
+    text-decoration: none;
   }
 `
 

@@ -7,13 +7,19 @@ import {
   SquareDescription,
   Subtitle,
   SubtitleOpenSource,
-  Description
+  Description,
+  HexagonWrapper
 } from './SecondSection.style'
+
 import SvgMapping from '../SvgMapping'
+import BackHexagon from '../BackHexagon'
 
 const SecondSection = () => {
   return (
     <Section id='about'>
+      <HexagonWrapper>
+        <BackHexagon side="right" show="half" scale='.85' transparent={true}/>
+      </HexagonWrapper>
       <Title>O que é a Hive ?</Title>
       <SquareContainer>
         <Square>
