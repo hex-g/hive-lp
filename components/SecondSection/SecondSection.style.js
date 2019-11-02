@@ -4,13 +4,13 @@ export const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${props => props.theme.wildSand};
+  position: relative;
 `
 
 export const Title = styled.h2`
   font-family: ${props => props.theme.primaryFont}, sans-serif;
   font-size: ${props => props.theme.smallTitle};
-  margin-bottom: 60px;
+  margin: 60px 0;
 `
 
 export const SquareContainer = styled.div`
@@ -59,4 +59,13 @@ export const Description = styled.p`
   span {
     font-weight: bold;
   }
+`
+
+export const HexagonWrapper = styled.div`
+  position: absolute;
+  top: 150px;
+  left: 0;
+  height: 1000px;
+  width: 100%;
+  z-index: -1;
 `

@@ -9,6 +9,7 @@ import {
   ImageWrapper
 } from './FirstSection.style'
 import SvgMapping from '../SvgMapping'
+import BackHexagon from '../BackHexagon'
 
 import Image from './monitor.png'
 
@@ -16,7 +17,7 @@ const FirstSection = () => {
   return (
     <Section id='top'>
       <HexagonWrapper>
-        <SvgMapping name="hexagon"/>
+        <BackHexagon side="left" show="third" transparent={false}/>
       </HexagonWrapper>
       <ContentWrapper>
         <MainText>
