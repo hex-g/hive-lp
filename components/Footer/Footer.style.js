@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const FooterHolder = styled.section`
     position: relative;
-    background-color: ${props => props.theme.athensGray};
     width: 100%; 
     overflow: hidden;
 `
