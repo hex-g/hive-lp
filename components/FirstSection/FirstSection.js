@@ -20,6 +20,8 @@ const FirstSection = () => {
         <BackHexagon side="left" show="third" transparent={false}/>
       </HexagonWrapper>
       <ContentWrapper>
+        
+        <ImageWrapper src={Image} />
         <MainText>
           Maior
           <span> produtividade acadêmica </span> 
@@ -30,7 +32,6 @@ const FirstSection = () => {
             <a>Experimente a Hive</a>
           </Link>
         </Button>
-        <ImageWrapper src={Image} />
       </ContentWrapper>
     </Section>
   )

@@ -33,8 +33,10 @@ export const HexagonAligner = styled.div`
     justify-content: center;
     position: relative;
     opacity: ${({ transparent }) => transparent ? ".1" : "1"};
+    transform: scale(.8);
     
-    transform: 
+    @media (min-width: 900px) {
+        transform: 
         ${({ show, side }) => {
             
             const alignSide = (side === "left" ? -1 : 1)
@@ -57,4 +59,7 @@ export const HexagonAligner = styled.div`
             const constraints = xConstraints * alignSide
             return "translateX("+constraints+"%)"
         }};
+    }
+
+    
 `
