@@ -1,4 +1,4 @@
 # hive-lp
 Hive Landing Page
 
-Live at: https://hive-lp.netlify.com/
+(Wip) Live at: https://hive-lp.netlify.com/
